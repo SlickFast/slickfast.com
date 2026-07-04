@@ -86,6 +86,10 @@
   .shot img{width:100%;height:auto;border-radius:8px;display:block}
   .shot .cap{font-size:13.5px;color:var(--muted);padding:0 4px 4px}
   .shot .cap b{color:var(--body)}
+  .subhead{font-size:22px;margin:52px 0 8px}
+  .subhead code{background:var(--card);border:1px solid var(--border);color:var(--teal);padding:2px 9px;border-radius:8px;font-size:18px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+  .palgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+  @media (max-width:700px){.palgrid{grid-template-columns:1fr}}
 
   /* install */
   .installgrid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
@@ -242,6 +246,20 @@
       <div class="shot"><img src="assets/gallery/pie-party.png" alt="Nested composition board: pie, horizontal bars, and full-width pie-of-pie drill-down tiles" loading="lazy"><div class="cap"><b>Nested composition</b> — pie-of-pie drill-downs as full-width tiles</div></div>
       <div class="shot wide"><img src="assets/gallery/saas-monthly-business-review.png" alt="SaaS monthly business review dashboard" loading="lazy"><div class="cap"><b>SaaS monthly review</b> — wide + tall tiles mixed in one grid</div></div>
       <div class="shot"><img src="assets/gallery/sales-pipeline.png" alt="Sales pipeline dashboard" loading="lazy"><div class="cap"><b>Sales pipeline</b></div></div>
+    </div>
+
+    <h3 class="subhead">One field changes the whole look: <code>palette</code></h3>
+    <p class="sectionsub">Single charts, straight out of the engine. 6 flat palettes and 12 nested
+    themes are built in — name one in the spec and the chart restyles itself, background to legend.</p>
+    <div class="palgrid">
+      <div class="shot"><img src="assets/gallery/palette-retro-editorial.png" alt="Donut chart in the Retro Editorial palette on a cream background" loading="lazy"><div class="cap"><b>Retro Editorial</b> — donut</div></div>
+      <div class="shot"><img src="assets/gallery/palette-nordic-earth.png" alt="Stacked area chart in the Nordic Earth palette on warm paper" loading="lazy"><div class="cap"><b>Nordic Earth</b> — stacked area</div></div>
+      <div class="shot"><img src="assets/gallery/palette-cyberpunk-glow.png" alt="Smooth line chart in the Cyberpunk Glow theme on near-black" loading="lazy"><div class="cap"><b>Cyberpunk Glow</b> — smooth line</div></div>
+      <div class="shot"><img src="assets/gallery/palette-sorbet-pastel.png" alt="Waffle chart in the Sorbet Pastel palette on white" loading="lazy"><div class="cap"><b>Sorbet Pastel</b> — waffle</div></div>
+    </div>
+
+    <h3 class="subhead">Every type, by family</h3>
+    <div class="galgrid">
       <div class="shot"><img src="assets/gallery/board-single-stat.png" alt="Single-stat chart family board: KPI, gauge, ring, callout, progress, bullet" loading="lazy"><div class="cap"><b>Single-stat family</b> — kpi · gauge · ring · callout · progress · bullet</div></div>
       <div class="shot"><img src="assets/gallery/board-comparison.png" alt="Comparison chart family board: bar, grouped, stacked, diverging, lollipop" loading="lazy"><div class="cap"><b>Comparison family</b> — bar · grouped · stacked · diverging · lollipop</div></div>
       <div class="shot"><img src="assets/gallery/board-trend.png" alt="Trend chart family board: line, smooth, area, stacked area, slope, difference" loading="lazy"><div class="cap"><b>Trend family</b> — line · area · slope · difference</div></div>
