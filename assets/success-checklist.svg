@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 260" width="460" height="260" style="max-width:100%;height:auto" font-family="Inter, system-ui, -apple-system, sans-serif">
+<rect x="0" y="0" width="460" height="260" fill="#0d1522"/>
+<text x="24" y="33" font-size="22" font-weight="700" fill="#f1f5f9">You → charts</text>
+<path d="M26.5,73.34 L32.96,80.14 L44.35,65.35" fill="none" stroke="#059669" stroke-width="4.42" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="66" y="78.95" font-size="18" fill="#64748b">Checkout complete</text>
+<path d="M26.5,111.34 L32.96,118.14 L44.35,103.35" fill="none" stroke="#059669" stroke-width="4.42" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="66" y="116.95" font-size="18" fill="#64748b">API key emailed to you</text>
+<circle cx="35" cy="149" r="6.8" fill="none" stroke="#cbd5e1" stroke-width="3.06"/>
+<text x="66" y="154.95" font-size="18" fill="#e2e8f0">First chart rendered</text>
+<text x="450" y="251" text-anchor="end" font-size="9" fill="#475569" opacity="0.6">slickfast.com</text>
+</svg>
