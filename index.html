@@ -152,13 +152,7 @@
   .plan .btn{text-align:center}
   .moreline{margin-top:26px;font-size:15px;color:var(--muted)}
 
-  /* license + roadmap */
-  .licgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-  @media (max-width:860px){.licgrid{grid-template-columns:1fr}}
-  .liccard{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:26px}
-  .liccard h3{font-size:18px;margin-bottom:10px}
-  .liccard h3 .free{color:var(--green)}
-  .liccard p{font-size:15px}
+  /* roadmap */
   .roadlist{max-width:820px}
   .roaditem{display:flex;gap:18px;align-items:baseline;padding:18px 0;border-bottom:1px solid var(--border)}
   .roaditem:last-child{border-bottom:none}
@@ -436,29 +430,11 @@ curl "https://api.slickfast.com/chart.png?spec=$(jq -rn --arg s "$SPEC" '$s|@uri
 <section id="license">
   <div class="wrap">
     <div class="kicker">License</div>
-    <h2>Open core, in plain words.</h2>
-    <p class="sectionsub">The whole engine is AGPL-3.0 open source. Here's what that means
-    for you, without the legalese:</p>
-    <div class="licgrid">
-      <div class="liccard">
-        <h3>Solo devs &amp; personal projects — <span class="free">free</span></h3>
-        <p>Use the MCP with Claude or any agent, unlimited. <b>The charts you render are
-        yours</b> — use them in client work, apps, posts, commercial or not. Using SlickFast
-        as a tool never obligates you to open-source your own project.</p>
-      </div>
-      <div class="liccard">
-        <h3>Running it in-house — <span class="free">free</span></h3>
-        <p>Run the engine on your own machines, for yourself, your team, or your company's
-        internal tools. Your hardware, your data, no fees, and your own code stays yours.</p>
-      </div>
-      <div class="liccard">
-        <h3>Products &amp; services — commercial license</h3>
-        <p>Building SlickFast into a product you sell, or offering it to your customers as
-        a service? The AGPL requires everything built on it to be open-sourced — the
-        commercial license is how you skip that. Write to
-        <a href="mailto:feedback@slickfast.com">feedback@slickfast.com</a>.</p>
-      </div>
-    </div>
+    <h2>Free and open source.</h2>
+    <p class="sectionsub" style="max-width:820px">SlickFast is open source under AGPL-3.0.
+    Using it with your agent is free, the charts you make are yours, and running it in-house
+    is free. Want SlickFast inside a commercial product or service? Commercial licenses are
+    available — <a href="mailto:feedback@slickfast.com">feedback@slickfast.com</a>.</p>
   </div>
 </section>
 
