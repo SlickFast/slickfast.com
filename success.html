@@ -82,19 +82,29 @@
     <div class="chartcard">
       <img src="assets/success-checklist.svg" alt="Onboarding checklist rendered by the SlickFast engine: checkout complete, key emailed, first chart pending" width="460" height="260">
     </div>
-    <div class="codecard">
-      <div class="head">
-        <h3>Your first render — 10 seconds</h3>
-        <button class="copybtn" data-copy="firstrender">Copy</button>
+    <div>
+      <div class="codecard" style="margin-bottom:18px">
+        <div class="head">
+          <h3>Your first render — paste in your browser</h3>
+          <button class="copybtn" data-copy="firsturl">Copy</button>
+        </div>
+        <pre id="firsturl" style="white-space:pre-wrap;word-break:break-all">https://api.slickfast.com/chart.png?spec=%7B%22type%22%3A%22bar%22%2C%22title%22%3A%22It%20works!%22%2C%22data%22%3A%7B%22labels%22%3A%5B%22Mon%22%2C%22Tue%22%2C%22Wed%22%5D%2C%22series%22%3A%5B%7B%22values%22%3A%5B12%2C19%2C8%5D%7D%5D%7D%7D&amp;key=sf_your_key_here</pre>
+        <div class="foot">Swap <code>sf_your_key_here</code> for your key, paste it in the
+        address bar, and there's your chart. That URL is the product: drop it in Slack,
+        email, or an <code>&lt;img&gt;</code> tag and it renders everywhere.</div>
       </div>
-      <pre id="firstrender">SPEC='{"type":"bar","title":"It works!","data":{"labels":["Mon","Tue","Wed"],
+      <div class="codecard">
+        <div class="head">
+          <h3>Same thing, in a terminal</h3>
+          <button class="copybtn" data-copy="firstrender">Copy</button>
+        </div>
+        <pre id="firstrender">SPEC='{"type":"bar","title":"It works!","data":{"labels":["Mon","Tue","Wed"],
        "series":[{"values":[12,19,8]}]}}'
 
 curl "https://api.slickfast.com/chart.png?spec=$(jq -rn --arg s "$SPEC" '$s|@uri')" \
   -H "Authorization: Bearer sf_your_key_here" \
   --output first-chart.png && open first-chart.png</pre>
-      <div class="foot">Swap in your key, paste in a terminal, done. The URL itself is
-      shareable — drop it in Slack or an <code>&lt;img&gt;</code> tag and it just works.</div>
+      </div>
     </div>
   </div>
 
