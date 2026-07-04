@@ -3,8 +3,26 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>SlickFast — charts &amp; dashboards for AI agents</title>
-<meta name="description" content="A tiny JSON spec in → a finished, retina-quality chart out. 47 chart types + whole dashboards in one call. Native SVG in milliseconds, no headless browser, deterministic, 100% local via MCP.">
+<title>SlickFast — Chart &amp; Dashboard API for AI Agents | JSON to Chart, Free MCP Server</title>
+<meta name="description" content="SlickFast turns a small JSON spec into retina PNG/SVG charts and dashboards. Free MCP server for Claude and AI agents, hosted chart image API, 47 chart types, deterministic output, no headless browser.">
+<link rel="canonical" href="https://slickfast.com/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "SlickFast",
+  "description": "Chart and dashboard generator for AI agents: a small JSON spec in, a finished retina PNG/SVG chart out. 47 chart types, whole dashboards in one call, free local MCP server, hosted chart image API.",
+  "url": "https://slickfast.com",
+  "applicationCategory": "DeveloperApplication",
+  "operatingSystem": "Any",
+  "offers": [
+    { "@type": "Offer", "name": "Free", "price": "0", "priceCurrency": "USD" },
+    { "@type": "Offer", "name": "Pro", "price": "29", "priceCurrency": "USD" },
+    { "@type": "Offer", "name": "Scale", "price": "79", "priceCurrency": "USD" }
+  ],
+  "license": "https://www.gnu.org/licenses/agpl-3.0.html"
+}
+</script>
 <meta property="og:title" content="SlickFast — charts &amp; dashboards for AI agents">
 <meta property="og:description" content="A tiny JSON spec in → a finished chart out. 47 types + whole dashboards in one call. No headless browser. Deterministic. 100% local via MCP.">
 <meta property="og:url" content="https://slickfast.com">
@@ -103,6 +121,10 @@
   .copybtn{background:transparent;border:1px solid var(--border);color:var(--teal);border-radius:8px;padding:6px 14px;font-size:13px;font-weight:700;cursor:pointer;font-family:inherit}
   .copybtn:hover{border-color:var(--teal)}
   .codecard pre{padding:18px;overflow-x:auto;font-size:13.5px;line-height:1.6;color:#c9e3ee;font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+  .codefoot{padding:13px 18px;border-top:1px solid var(--border);font-size:13.5px;color:var(--muted)}
+  .codefoot code{color:var(--body)}
+  .ratiorow{display:grid;grid-template-columns:1.91fr 1fr .5625fr;gap:20px;align-items:start}
+  .ratiorow .cap{font-size:12.5px}
   .then{margin-top:22px;color:var(--muted);font-size:15.5px}
   .then em{color:var(--body)}
 
@@ -285,6 +307,16 @@
       <div class="shot"><img src="assets/gallery/palette-sorbet-pastel.png" alt="Waffle chart in the Sorbet Pastel palette on white" loading="lazy"><div class="cap"><b>Sorbet Pastel</b> — waffle</div></div>
     </div>
 
+    <h3 class="subhead">Any shape, one field: <code>preset</code></h3>
+    <p class="sectionsub">The same chart, re-laid-out by naming a preset — no layout math.
+    <b>Share Card</b> (1.91:1) for Slack/X/LinkedIn link previews, <b>Wide</b> 16:9 for
+    slides, <b>Square</b> and <b>Portrait</b> for feeds, <b>Tall</b> 9:16 for Stories.</p>
+    <div class="ratiorow">
+      <div class="shot"><img src="assets/gallery/ratio-sharecard.png" alt="Bar chart at Share Card 1.91:1 aspect ratio" loading="lazy"><div class="cap"><b>Share Card</b> — link previews</div></div>
+      <div class="shot"><img src="assets/gallery/ratio-square.png" alt="The same bar chart at square 1:1 aspect ratio" loading="lazy"><div class="cap"><b>Square</b> — feeds</div></div>
+      <div class="shot"><img src="assets/gallery/ratio-tall.png" alt="The same bar chart at tall 9:16 aspect ratio" loading="lazy"><div class="cap"><b>Tall</b> — Stories</div></div>
+    </div>
+
     <h3 class="subhead">Every type, by family</h3>
     <div class="galgrid">
       <div class="shot"><img src="assets/gallery/board-single-stat.png" alt="Single-stat chart family board: KPI, gauge, ring, callout, progress, bullet" loading="lazy"><div class="cap"><b>Single-stat family</b> &middot; <span style="color:var(--teal)">Pastel</span> &mdash; kpi &middot; gauge &middot; ring &middot; callout &middot; progress &middot; bullet</div></div>
@@ -317,6 +349,10 @@
     }
   }
 }</pre>
+        <div class="codefoot">The package is
+        <a href="https://www.npmjs.com/package/@slickfast/mcp"><code>@slickfast/mcp</code> on npm</a>
+        — a self-contained bundle that <code>npx</code> fetches on first run. No clone, no
+        build step, no global install; needs only Node.js. Renders 100% on your machine.</div>
       </div>
       <div class="codecard">
         <div class="head">
@@ -329,6 +365,10 @@
 curl "https://api.slickfast.com/chart.png?spec=$(jq -rn --arg s "$SPEC" '$s|@uri')" \
   -H "Authorization: Bearer sf_your_key" \
   --output chart.png</pre>
+        <div class="codefoot">Keys start with <code>sf_</code> and come from any plan
+        (Free included). Send via <code>Authorization: Bearer</code>,
+        <code>X-API-Key</code>, or <code>?key=</code> for embeddable URLs.
+        <code>/chart.svg</code> returns vector instead.</div>
       </div>
     </div>
     <p class="then">Then ask your agent to <em>"render a bar chart of last quarter's revenue"</em>
@@ -427,9 +467,10 @@ curl "https://api.slickfast.com/chart.png?spec=$(jq -rn --arg s "$SPEC" '$s|@uri
     <div class="roadlist">
       <div class="roaditem">
         <span class="pill next">NEXT UP</span>
-        <div><b>Live Charts</b>
-        <p>One chart URL that re-renders with fresh data every time it's opened — dashboards
-        in email and docs that are never stale.</p></div>
+        <div><b>Live Charts — starting with email</b>
+        <p>One chart URL that re-renders with fresh data every time it's viewed.
+        <b>Step one is email:</b> a chart in your inbox that's current at every open,
+        not a stale screenshot. Then docs, wikis — anywhere an image loads.</p></div>
       </div>
       <div class="roaditem">
         <span class="pill soon">SOON</span>
