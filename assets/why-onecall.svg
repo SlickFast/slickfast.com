@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 200" width="420" height="200" style="max-width:100%;height:auto" font-family="Inter, system-ui, -apple-system, sans-serif">
+<rect x="24" y="24" width="372" height="152" rx="14" fill="none" stroke="#e2e8f0" stroke-width="1"/>
+<rect x="42.6" y="51.36" width="5" height="97.28" rx="2.5" fill="#22d3ee"/>
+<text x="66.78" y="65.04" font-size="14" font-weight="600" fill="#64748b">API calls for an 8-tile dashboard</text>
+<text x="66.78" y="112.16" font-size="36" font-weight="800" fill="#0f172a">1</text>
+<text x="410" y="191" text-anchor="end" font-size="9" fill="#94a3b8" opacity="0.6">slickfast.com</text>
+</svg>
