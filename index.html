@@ -432,8 +432,9 @@ curl "https://api.slickfast.com/chart.png?spec=$(jq -rn --arg s "$SPEC" '$s|@uri
     <i>new</i> chart. Each unique chart renders once — after that, every view of its URL is served
     from cache, free and uncounted. A million people can look at the same chart and your meter
     ticks once. <b style="color:var(--heading)">You pay when we draw — not every time someone
-    looks.</b> Change the data and that's a new render; a rarely-viewed chart may occasionally
-    re-render after long inactivity.</p>
+    looks.</b> Change the data and that's a new render; a chart may occasionally re-render
+    (first views from a new region, or after long inactivity) — a few extra ticks, not per-view
+    billing.</p>
     <p class="moreline">Need more than 50k renders, or a commercial license for the engine?
     Write to <a href="mailto:feedback@slickfast.com">feedback@slickfast.com</a>.</p>
   </div>
