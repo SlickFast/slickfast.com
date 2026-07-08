@@ -1,0 +1,29 @@
+{
+  "type": "dashboard",
+  "title": "SlickFast is Agent-Ready — one tool call, JSON in, image out",
+  "background": "#0B1020",
+  "textColor": "#E6EDF6",
+  "layout": { "cols": 4, "gap": 16 },
+  "tiles": [
+    { "chart": { "type": "kpi", "label": "Output tokens / chart", "value": 45, "color": "#14B8A6" } },
+    { "chart": { "type": "kpi", "label": "Chart types", "value": 47, "color": "#22D3EE" } },
+    { "chart": { "type": "kpi", "label": "Aspect presets (+ custom)", "value": 6, "color": "#A3BE8C" } },
+    { "chart": { "type": "kpi", "label": "Output formats (SVG + PNG)", "value": 2, "color": "#EBCB8B" } },
+    { "span": [2, 1], "chart": { "type": "horizontal", "title": "Output tokens per chart, by method (typical)", "showValues": true, "valueUnit": "tok",
+      "data": { "labels": ["SlickFast", "Chart.js code", "matplotlib code", "Hand-written SVG"],
+        "series": [{ "values": [45, 280, 450, 2400], "colors": ["#14B8A6", "#A3BE8C", "#EBCB8B", "#DC2626"] }] } } },
+    { "span": [2, 1], "chart": { "type": "horizontal", "title": "Charts per 10,000-token budget (typical)", "showValues": true, "valueUnit": "charts",
+      "data": { "labels": ["SlickFast", "Chart.js code", "matplotlib code", "Hand-written SVG"],
+        "series": [{ "values": [222, 36, 22, 4], "colors": ["#14B8A6", "#A3BE8C", "#EBCB8B", "#DC2626"] }] } } },
+    { "span": [4, 1], "chart": { "type": "checklist", "title": "Agent-native by design",
+      "items": [
+        { "label": "One tool call per chart — JSON in, image out", "status": "done" },
+        { "label": "SVG or PNG from the same spec", "status": "done" },
+        { "label": "Any resolution — custom scale (retina by default) + width/height", "status": "done" },
+        { "label": "Aspect on the fly — 6 presets + any ratio", "status": "done" },
+        { "label": "47 chart types + tiled dashboards", "status": "done" },
+        { "label": "Deterministic — no code to run, no retry loops", "status": "done" },
+        { "label": "Self-describing — describe_type · list_palettes · gallery", "status": "done" }
+      ] } }
+  ]
+}
