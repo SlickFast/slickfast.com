@@ -338,7 +338,7 @@
     <div class="installgrid">
       <div class="codecard">
         <div class="head">
-          <div><h3>MCP — 100% local</h3><div class="sub">Claude Desktop · Claude Code · claude.ai — add to your MCP config, restart</div></div>
+          <div><h3>MCP — 100% local</h3><div class="sub">Claude Desktop · Claude Code · Cursor — add to your MCP config, restart</div></div>
           <button class="copybtn" data-copy="mcpsnippet">Copy</button>
         </div>
         <pre id="mcpsnippet">{
@@ -371,8 +371,34 @@ curl "https://api.slickfast.com/chart.png?spec=$(jq -rn --arg s "$SPEC" '$s|@uri
         <code>/chart.svg</code> returns vector instead.</div>
       </div>
     </div>
-    <p class="then">Then ask your agent to <em>"render a bar chart of last quarter's revenue"</em>
-    or <em>"build a dashboard with an MRR tile, a signups funnel, and a usage heatmap."</em></p>
+    <h3 class="subhead">Where does the config go?</h3>
+    <ul class="whylist">
+      <li><b>Claude Desktop</b> — <code>Settings → Developer → Edit Config</code>, or edit the file directly:
+      macOS <code>~/Library/Application&nbsp;Support/Claude/claude_desktop_config.json</code>,
+      Windows <code>%APPDATA%\Claude\claude_desktop_config.json</code>. <b>Restart Claude after saving.</b></li>
+      <li><b>Cursor</b> — <code>Settings → MCP → Add new server</code>, or drop the same JSON in <code>~/.cursor/mcp.json</code>.</li>
+      <li><b>Claude Code</b> — one command: <code>claude mcp add slickfast -- npx -y @slickfast/mcp</code>.</li>
+    </ul>
+
+    <h3 class="subhead">Try this first</h3>
+    <p class="sectionsub">Once it's connected, ask your agent:</p>
+    <p class="then"><em>"Using SlickFast, build a dashboard with an MRR tile, a signups funnel, and a usage heatmap."</em></p>
+    <p class="sectionsub">You get a finished multi-chart dashboard image back in one call. Want a
+    smaller first step? <em>"render a bar chart of last quarter's revenue"</em>, or
+    <em>"show me the SlickFast gallery"</em> to see every type at once.</p>
+
+    <details class="speccard" style="margin-top:22px">
+      <summary>Not seeing it? Quick fixes</summary>
+      <div style="padding:14px 18px;font-size:14px;color:var(--muted);line-height:1.6">
+        <ul style="margin:0;padding-left:18px">
+          <li><b>Restart the app</b> after editing the config — MCP servers only load at startup.</li>
+          <li><b>Needs Node.js</b> (v18+). Check with <code>node -v</code>; install from nodejs.org if it's missing.</li>
+          <li><b>First run is slow</b> — <code>npx</code> downloads the package once, then every run is instant.</li>
+          <li><b>The JSON must be valid</b> — one stray comma breaks the whole config. Paste the block exactly.</li>
+          <li>Still stuck? <a href="https://github.com/SlickFast/slickfast/issues">Open an issue</a> — we read every one.</li>
+        </ul>
+      </div>
+    </details>
   </div>
 </section>
 
