@@ -47,6 +47,8 @@
   h1,h2,h3{color:var(--heading);line-height:1.2}
   .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
   section{padding:72px 0}
+  #live{padding:40px 0 56px}
+  #what{padding:44px 0 56px}
   .kicker{color:var(--teal);font-size:14px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin-bottom:12px}
   h2{font-size:32px;margin-bottom:10px}
   .sectionsub{color:var(--muted);max-width:640px;margin-bottom:36px}
@@ -61,12 +63,12 @@
   @media (max-width:760px){.nav .links{gap:14px;font-size:14px;overflow-x:auto}}
 
   /* hero */
-  .hero{padding:88px 0 64px}
+  .hero{padding:88px 0 36px}
   .hero h1{font-size:clamp(34px,5.5vw,54px);letter-spacing:-.02em;margin-bottom:18px}
   .hero .sub{font-size:20px;max-width:680px;margin-bottom:30px}
   .hero .sub b{color:var(--heading)}
   .ctas{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:12px}
-  .freenote{font-size:14.5px;color:var(--muted);margin-bottom:52px}
+  .freenote{font-size:14.5px;color:var(--muted)}
   .freenote b{color:var(--green)}
   .btn{display:inline-block;padding:13px 24px;border-radius:10px;font-weight:700;font-size:16px;border:1px solid transparent}
   .btn:hover{text-decoration:none;filter:brightness(1.1)}
@@ -241,6 +243,39 @@
     2&nbsp;·&nbsp;<b>Push</b> — your script (or your AI agent) sends fresh numbers whenever they change.<br>
     3&nbsp;·&nbsp;<b>Done</b> — every embed of that URL shows the latest data. Viewers need no key,
     and views are never metered — unlimited audience on every plan.</p>
+
+    <div class="herochart" style="margin-top:34px;max-width:760px">
+      <img id="wikiticker" src="https://api.slickfast.com/live/0d2bc046bff0ca7372d3c4bb8955ff2b.svg"
+        alt="Wikipedia edits per minute — a live SlickFast chart updating every 2 seconds"
+        width="936" height="502">
+      <div class="liveline"><span class="dot"></span><b>Watch the seconds tick.</b> Every edit on
+      Wikipedia, worldwide — pushed to this chart every 2 seconds. It's a plain
+      <b>&lt;img&gt;</b>: no websockets, no charting library. This page just reloads the same
+      permanent URL.</div>
+    </div>
+    <script>
+      (function(){var w=document.getElementById('wikiticker'),u=w.src;
+      setInterval(function(){w.src=u+'?t='+Date.now();},2000);})();
+    </script>
+  </div>
+</section>
+
+<section id="what">
+  <div class="wrap">
+    <div class="kicker">What SlickFast is</div>
+    <h2>A pure rendering primitive.</h2>
+    <p class="sectionsub">JSON spec → SVG → PNG in milliseconds. <b>No browser, no Puppeteer,
+    no heavy dependencies.</b> Deterministic by design — same spec, same image, every time.</p>
+    <p class="sectionsub">Most chart-to-image tools secretly spin up a full headless browser —
+    hundreds of MB, slow cold starts, flaky screenshots. SlickFast renders <b>pure
+    in-memory</b>: no Chromium, no GPU, no DOM, no randomness, no drift. That one decision is
+    why it's fast enough for agents, cheap enough to cache by spec-hash, and reproducible
+    enough to test against.</p>
+    <p class="sectionsub"><b>47 chart and information-design types</b> (bar, line, pie, KPI,
+    cards, funnel, gauge, heatmap, calendar, gantt, waterfall…), plus entire multi-chart
+    dashboards tiled into one image in a single call. It runs as an MCP tool, so an agent
+    hands it a spec and gets back a finished PNG (or SVG) — <b>100% local, nothing leaves
+    your machine</b>.</p>
   </div>
 </section>
 
