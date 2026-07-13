@@ -48,7 +48,8 @@
   .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
   section{padding:72px 0}
   #live{padding:40px 0 56px}
-  #what{padding:44px 0 56px}
+  #what{padding:44px 0 28px}
+  .why{padding-top:40px}
   .kicker{color:var(--teal);font-size:14px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin-bottom:12px}
   h2{font-size:32px;margin-bottom:10px}
   .sectionsub{color:var(--muted);max-width:640px;margin-bottom:36px}
@@ -290,26 +291,20 @@
         <img src="assets/why-tokens.svg" alt="Stat card: ~40 output tokens for a finished chart" width="420" height="200">
         <p class="pain">Hand-writing SVG or matplotlib code: <span class="r">2,000+ tokens</span>, then the retries when it doesn't render.</p>
       </div>
-      <div class="svgcard">
-        <img src="assets/why-browser.svg" alt="Stat card: 0 MB of headless browser shipped" width="420" height="200">
-        <p class="pain">Most chart-to-image pipelines quietly ship <span class="r">~300&nbsp;MB</span> of Puppeteer. SlickFast renders pure in-memory.</p>
-      </div>
+      
       <div class="svgcard">
         <img src="assets/why-onecall.svg" alt="Stat card: 1 API call for an 8-tile dashboard" width="420" height="200">
         <p class="pain">The alternative: <span class="r">8 separate renders</span> plus layout math. A dashboard here is one tool call.</p>
       </div>
-      <div class="svgcard">
-        <img src="assets/why-local.svg" alt="Stat card: 0 bytes of data leaving your machine over MCP" width="420" height="200">
-        <p class="pain">The MCP renders and rasterizes on your machine. Nothing is sent anywhere.</p>
-      </div>
+      
     </div>
     <ul class="whylist">
       <li><b>A spec is nearly free.</b> A few dozen tokens, and <code>{type, data}</code> alone is a finished, well-designed chart.</li>
       <li><b>Changes are one-field edits.</b> Swap <code>bar</code> → <code>line</code>, change a palette, resize for a slide — re-render. No code rewrites.</li>
-      <li><b>Deterministic.</b> Same spec, same chart, every time. No randomness, no browser drift — cacheable, testable, reproducible.</li>
+      
       <li><b>Never throws garbage at the model.</b> Empty data → a clean graceful frame. A real mistake → a loud error listing the valid options, so the agent self-corrects in one step.</li>
       <li><b>Native SVG, vector-first.</b> A few KB, crisp at any scale — or retina PNG on demand.</li>
-      <li><b>47 chart &amp; information-design types.</b> Bar to gantt to tierlist — plus whole multi-chart dashboards tiled into one image, with tiles spanning columns and rows (wide 2×1, tall 1×2, hero 2×2) in one grid.</li>
+      
     </ul>
   </div>
 </section>
@@ -334,26 +329,30 @@
     </div>
 
     <h3 class="subhead">Whole dashboards — one spec, one call, one image</h3>
+    <div class="shot" style="margin-bottom:20px">
+      <img src="assets/gallery/extreme-grid.png" alt="6-column extreme grid dashboard with 17 tiles: KPI row, gauge row, trend charts, bar and leaderboard" loading="lazy">
+      <div class="cap"><b>6-column extreme grid</b> — 17 tiles, one render: KPIs · gauges · trends · leaderboard</div>
+    </div>
     <div class="feature2">
       <div class="shot">
-        <img src="assets/gallery/cyberpunk-grid-ops-dark.png" alt="GRID-OPS dark cyberpunk operations dashboard" loading="lazy">
-        <div class="cap"><b>GRID-OPS</b> — dark ops board, Cyberpunk palette, one render</div>
+        <img src="assets/gallery/fitpulse-daily.png" alt="FitPulse portrait daily summary board: steps, calories, trend, goal gauge, sleep ring" loading="lazy">
+        <div class="cap"><b>Portrait board</b> — phone-shaped daily summary</div>
       </div>
       <div class="shot">
-        <img src="assets/gallery/systems-bridge-status-rowspan.png" alt="Systems bridge status dashboard with row-spanning tiles" loading="lazy">
-        <div class="cap"><b>Bridge status</b> — row-spanning tiles in the same grid</div>
+        <img src="assets/gallery/pie-party.png" alt="Nested composition board: pie, horizontal bars, and full-width pie-of-pie drill-down tiles" loading="lazy">
+        <div class="cap"><b>Nested composition</b> — pie-of-pie drill-downs as full-width tiles</div>
       </div>
     </div>
-    <div class="galgrid">
-      <div class="shot wide"><img src="assets/gallery/extreme-grid.png" alt="6-column extreme grid dashboard with 17 tiles: KPI row, gauge row, trend charts, bar and leaderboard" loading="lazy"><div class="cap"><b>6-column extreme grid</b> — 17 tiles, one render: KPIs · gauges · trends · leaderboard</div></div>
-      <div class="shot"><img src="assets/gallery/fitpulse-daily.png" alt="FitPulse portrait daily summary board: steps, calories, trend, goal gauge, sleep ring" loading="lazy"><div class="cap"><b>Portrait board</b> — phone-shaped daily summary</div></div>
-      <div class="shot wide"><img src="assets/gallery/apollo-mission-control.png" alt="Apollo Mission Control themed dashboard: KPIs, moonwalk hours bar, crew donut, NASA budget line, lunar-stay leaderboard" loading="lazy"><div class="cap"><b>Apollo — Mission Control</b> — themed board, real program data</div></div>
-      <div class="shot"><img src="assets/gallery/pie-party.png" alt="Nested composition board: pie, horizontal bars, and full-width pie-of-pie drill-down tiles" loading="lazy"><div class="cap"><b>Nested composition</b> — pie-of-pie drill-downs as full-width tiles</div></div>
-      <div class="shot wide"><img src="assets/gallery/saas-monthly-business-review.png" alt="SaaS monthly business review dashboard" loading="lazy"><div class="cap"><b>SaaS monthly review</b> — wide + tall tiles mixed in one grid</div></div>
-      <div class="shot"><img src="assets/gallery/sales-pipeline.png" alt="Sales pipeline dashboard" loading="lazy"><div class="cap"><b>Sales pipeline</b></div></div>
+    <div class="feature2">
+      <div class="shot">
+        <img src="assets/gallery/apollo-mission-control.png" alt="Apollo Mission Control themed dashboard: KPIs, moonwalk hours bar, crew donut, NASA budget line, lunar-stay leaderboard" loading="lazy">
+        <div class="cap"><b>Apollo — Mission Control</b> — themed board, real program data</div>
+      </div>
+      <div class="shot">
+        <img src="assets/gallery/saas-monthly-business-review.png" alt="SaaS monthly business review dashboard" loading="lazy">
+        <div class="cap"><b>SaaS monthly review</b> — wide + tall tiles mixed in one grid</div>
+      </div>
     </div>
-
-    
 
     <h3 class="subhead">Any shape, one field: <code>preset</code></h3>
     <p class="sectionsub">The same chart, re-laid-out by naming a preset — no layout math.
