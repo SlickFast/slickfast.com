@@ -165,6 +165,7 @@
   .pill.next{background:rgba(34,211,238,.14);color:var(--teal);border:1px solid rgba(34,211,238,.4)}
   .pill.soon{background:rgba(234,179,8,.12);color:var(--amber);border:1px solid rgba(234,179,8,.35)}
   .pill.ongoing{background:rgba(139,155,176,.12);color:var(--muted);border:1px solid var(--border)}
+  .pill.shipped{background:rgba(34,197,94,.14);color:var(--green);border:1px solid rgba(34,197,94,.4)}
   .roaditem b{color:var(--heading);font-size:17px}
   .roaditem p{font-size:15px;color:var(--muted);margin-top:2px}
 
@@ -530,10 +531,10 @@ curl "https://api.slickfast.com/chart.png?spec=$(jq -rn --arg s "$SPEC" '$s|@uri
     <h2>What's next.</h2>
     <div class="roadlist">
       <div class="roaditem">
-        <span class="pill next">NEXT UP</span>
-        <div><b>Live Charts</b>
-        <p>One chart URL that re-renders with fresh data every time it's viewed. Embed it
-        in docs, wikis, dashboards, READMEs — anywhere an image loads, it's always current.</p></div>
+        <span class="pill shipped">SHIPPED ✓</span>
+        <div><b style="text-decoration:line-through;text-decoration-color:rgba(34,197,94,.7);text-decoration-thickness:2px">Live Charts</b>
+        <p>One chart URL, always current — embed it anywhere an image loads.
+        <a href="#live">It's live — see it in action ↑</a></p></div>
       </div>
       <div class="roaditem">
         <span class="pill soon">SOON</span>
