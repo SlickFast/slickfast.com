@@ -251,13 +251,13 @@
         alt="Wikipedia edits per minute — a live SlickFast chart updating every 2 seconds"
         width="1392" height="296">
       <div class="liveline"><span class="dot"></span><b>Watch the seconds tick.</b> Every edit on
-      Wikipedia, worldwide — pushed to this chart every 2 seconds. It's a plain
+      Wikipedia, worldwide — pushed to this chart every 3 seconds. It's a plain
       <b>&lt;img&gt;</b>: no websockets, no charting library. This page just reloads the same
       permanent URL.</div>
     </div>
     <script>
-      (function(){var w=document.getElementById('wikiticker'),u=w.src;
-      setInterval(function(){w.src=u+'?t='+Date.now();},2000);})();
+      (function(){var w=document.getElementById('wikiticker'),u=w.src.split('?')[0];
+      setInterval(function(){var p=new Image();p.onload=function(){w.src=p.src;};p.src=u+'?t='+Date.now();},3000);})();
     </script>
   </div>
 </section>
