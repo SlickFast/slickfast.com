@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SlickFast — The Live Deck</title>
+<meta name="description" content="A live instrument panel rendered as a single image URL, re-rendered server-side every 3 seconds. Wikipedia's pulse, the ISS, markets, planes, earthquakes — no websockets, no JS charts.">
+<link rel="canonical" href="https://slickfast.com/deck">
+<meta property="og:title" content="SlickFast — The Live Deck">
+<meta property="og:description" content="Every needle moves every 3 seconds — and it's a single image URL. No websockets, no JS charts. View source.">
+<meta property="og:url" content="https://slickfast.com/deck">
+<meta property="og:image" content="https://slickfast.com/assets/deck-og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="SlickFast — The Live Deck">
+<meta name="twitter:description" content="A live cockpit as one image URL, re-rendered every 3 seconds. View source — there's nothing there.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230d1522'/%3E%3Cpath d='M8 24 L8 16 L12 16 L12 24 Z M14 24 L14 10 L18 10 L18 24 Z M20 24 L20 13 L24 13 L24 24 Z' fill='%2322d3ee'/%3E%3C/svg%3E">
+<style>
+  :root{--bg:#0a0c14;--card:#16202f;--border:#243044;--heading:#f1f5f9;--body:#c3cbd8;--muted:#8b9bb0;--teal:#22d3ee;--pink:#f43f5e;--green:#22c55e}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--body);font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{color:var(--teal);text-decoration:none}
+  a:hover{text-decoration:underline}
+  .wrap{max-width:1500px;margin:0 auto;padding:0 20px}
+  header{padding:18px 0;border-bottom:1px solid var(--border)}
+  .logo{font-weight:800;font-size:19px;color:var(--heading)}
+  .logo .tick{color:var(--teal)}
+  .head{display:flex;align-items:center;justify-content:space-between}
+  .head a.back{font-size:14.5px}
+  h1{color:var(--heading);font-size:clamp(24px,3.4vw,34px);letter-spacing:-.01em;margin:34px 0 8px;text-align:center}
+  .sub{color:var(--muted);text-align:center;max-width:760px;margin:0 auto 30px;font-size:15.5px}
+  .sub b{color:var(--heading)}
+  .deck{margin:0 auto 12px;display:block;width:100%;height:auto;border-radius:14px;border:1px solid var(--border)}
+  .cap{font-size:13.5px;color:var(--muted);text-align:center;margin-bottom:44px}
+  .cap .dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--pink);margin-right:7px;animation:pulse 3s infinite}
+  .cap .dot.g{background:var(--green)}
+  @keyframes pulse{50%{opacity:.3}}
+  .how{max-width:760px;margin:8px auto 50px;text-align:center;color:var(--muted);font-size:15px;border:1px solid var(--border);border-radius:14px;padding:22px 26px;background:var(--card)}
+  .how b{color:var(--heading)}
+  .cta{display:flex;justify-content:center;gap:14px;margin:0 0 60px}
+  .btn{display:inline-block;padding:13px 24px;border-radius:10px;font-weight:700;font-size:16px}
+  .btn-primary{background:var(--teal);color:#062029}
+  .btn-ghost{border:1px solid var(--border);color:var(--heading);background:var(--card)}
+  footer{border-top:1px solid var(--border);padding:22px 0;font-size:13.5px;color:var(--muted);text-align:center}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap head">
+    <a class="logo" href="/">Slick<span class="tick">Fast</span></a>
+    <a class="back" href="/">← slickfast.com</a>
+  </div>
+</header>
+
+<div class="wrap">
+  <h1>The Live Deck</h1>
+  <p class="sub">Each panel below is a <b>single image URL</b>, re-rendered on our servers
+  <b>every 3 seconds</b> from live feeds. No websockets. No JavaScript charting. This page
+  just reloads two images — <b>view source</b>, there's nothing there.</p>
+
+  <img id="pulse" class="deck" src="https://api.slickfast.com/live/0e6d386985bfec428cce3e3b707f570a.svg"
+    alt="The Pulse Deck — gauges, odometers and rolling charts where every instrument moves every 3 seconds: API latency probes, network pings, Wikipedia edit bursts and text churn, ISS velocity and distance, BTC">
+  <p class="cap"><span class="dot"></span><b>PULSE DECK</b> — every needle moves every beat:
+  live latency probes, Wikipedia's edit stream (bursts, text churned, human-vs-bot), the ISS
+  odometer, BTC. Watch the clocks.</p>
+
+  <img id="hell" class="deck" src="https://api.slickfast.com/live/95976c4fd679bdfc302b0f1ab26eddc9.svg"
+    alt="The Hell Deck — the world at a glance: planes airborne, ISS telemetry, earthquakes, markets, Wikipedia, GitHub firehose, Hacker News, each instrument at its natural refresh rate">
+  <p class="cap"><span class="dot g"></span><b>HELL DECK</b> — the world's vitals: planes in
+  the sky, earthquakes, markets, GitHub's firehose, Hacker News — each instrument at its
+  data's honest speed.</p>
+
+  <div class="how"><b>How it works:</b> a tiny worker pushes fresh numbers to a
+  <b>SlickFast live chart</b> — a permanent URL whose image always shows the latest data.
+  Embed it anywhere an image loads: READMEs, dashboards, email. Rendered by the same engine
+  you can run yourself.</div>
+
+  <div class="cta">
+    <a class="btn btn-primary" href="/#pricing">Build your own — free key</a>
+    <a class="btn btn-ghost" href="/#install">Install the MCP</a>
+  </div>
+</div>
+
+<footer>SlickFast — charts &amp; dashboards for AI agents. <a href="/">Home</a> ·
+<a href="https://github.com/SlickFast/slickfast">GitHub</a></footer>
+
+<script>
+  (function () {
+    function live(id) {
+      var img = document.getElementById(id), base = img.src.split('?')[0];
+      setInterval(function () {
+        var pre = new Image();
+        pre.onload = function () { img.src = pre.src; };
+        pre.src = base + '?t=' + Date.now();
+      }, 3000);
+    }
+    live('pulse'); live('hell');
+  })();
+</script>
+</body>
+</html>
