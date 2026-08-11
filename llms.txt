@@ -1,0 +1,25 @@
+# SlickFast
+> Deterministic chart and dashboard renderer for AI agents and automations.
+> JSON spec in → SVG/PNG out. Pure JS, no headless browser. 47 chart types.
+
+## What it does
+- POST a JSON spec, get a chart. Milliseconds per render.
+- 47 types — bar, line, pie, dashboards, gauges, funnels, calendars, KPIs — one schema.
+- Deterministic: same spec = byte-identical image, forever.
+- A full dashboard (many tiles) is ONE image render.
+- Live charts: permanent image URL whose content updates when you re-push the spec.
+
+## For agents
+- Local MCP (free, keyless, renders on-machine): npx @slickfast/mcp
+- Hosted MCP: https://mcp.slickfast.com (OAuth; key, free-tier, and demo sign-in)
+- REST API: https://api.slickfast.com — free tier 250 renders/month, no card required
+- Chart spec reference: https://slickfast.com/docs.html
+- OpenAPI: https://slickfast.com/openapi.yaml
+
+## Pricing
+- Free: 250 renders/month, no card. Paid tiers: https://slickfast.com/#pricing
+- Commercial license (self-host without AGPL obligations): https://slickfast.com/license.html
+
+## Source
+- AGPL-3.0, open source: https://github.com/SlickFast/slickfast
+- GitHub README dashboard template: https://github.com/SlickFast/github-dashboard-template
