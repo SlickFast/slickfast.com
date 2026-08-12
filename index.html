@@ -370,7 +370,12 @@
           <li><b>5 live charts</b> — views free &amp; unlimited</li>
           <li>No card required</li>
         </ul>
-        <a class="btn btn-ghost" href="https://buy.polar.sh/polar_cl_8bz2OZuBqMMMlJWogrM8KLdwRueBikbIRpTXw3eNigJ">Start free</a>
+        <form id="freeform" style="display:flex;flex-direction:column;gap:8px" onsubmit="return sfFree(event)">
+          <input id="freemail" type="email" required placeholder="you@company.com" autocomplete="email"
+                 style="padding:12px 14px;border-radius:10px;border:1px solid var(--border);background:var(--card);color:var(--heading);font-size:15px">
+          <button class="btn btn-ghost" type="submit" id="freebtn">Get your key instantly</button>
+          <div id="freeout" style="display:none"></div>
+        </form>
       </div>
       <div class="plan star">
         <div class="tag">MOST POPULAR · $14.50/mo with the code</div>
@@ -383,7 +388,7 @@
           <li>Room for real agent workloads</li>
           <li>Embed anywhere — Slack, email, docs</li>
         </ul>
-        <a class="btn btn-primary" href="https://buy.polar.sh/polar_cl_sKiNfaSKKmseMvhMI5Q0EIfgLyGVG0S949ZXW3B2K4b">Get Pro</a>
+        <a class="btn btn-primary" href="https://api.slickfast.com/go/pro">Get Pro</a>
       </div>
       <div class="plan">
         <h3>Scale</h3>
@@ -394,7 +399,7 @@
           <li><b>100 live charts</b>, watermark-free</li>
           <li>Built for fleets of agents</li>
         </ul>
-        <a class="btn btn-ghost" href="https://buy.polar.sh/polar_cl_PFDDIP8cgJirrKDKelMkPJ9N82WwYQbktkSwP2tZSMQ">Get Scale</a>
+        <a class="btn btn-ghost" href="https://api.slickfast.com/go/scale">Get Scale</a>
       </div>
     </div>
     <p class="moreline"><b style="color:var(--heading)">What counts as a render?</b> Only drawing a
@@ -605,5 +610,34 @@ document.querySelectorAll('.copybtn').forEach(function(btn){
 });
 </script>
 
+<script>
+async function sfFree(e){
+  e.preventDefault();
+  var btn=document.getElementById('freebtn'),out=document.getElementById('freeout'),em=document.getElementById('freemail').value;
+  btn.disabled=true;btn.textContent='Minting…';out.style.display='none';
+  try{
+    var r=await fetch('https://api.slickfast.com/signup/free',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({email:em})});
+    var j=await r.json();
+    out.style.display='block';
+    if(r.ok){
+      out.innerHTML='<div style="background:var(--card);border:1px solid var(--teal);border-radius:10px;padding:12px;margin-top:4px">'
+        +'<div style="font-size:12px;color:var(--muted);margin-bottom:6px">Your API key — <b>save it now, it is shown once</b>. We do not store your email.</div>'
+        +'<code style="display:block;word-break:break-all;font-size:12.5px;user-select:all">'+j.key+'</code>'
+        +'<button class="btn btn-ghost" type="button" style="margin-top:8px;padding:8px 14px;font-size:13px" onclick="navigator.clipboard.writeText(\''+j.key+'\');this.textContent=\'Copied ✓\'">Copy key</button>'
+        +'<div style="font-size:12.5px;color:var(--muted);margin-top:8px">Next: <a href="docs.html">docs</a> · on claude.ai add connector <code>mcp.slickfast.com</code> · <a href="https://github.com/SlickFast/github-dashboard-template">README dashboard template</a></div>'
+        +'</div>';
+      document.getElementById('freemail').style.display='none';btn.style.display='none';
+    }else{
+      out.innerHTML='<div style="color:var(--muted);font-size:13.5px;padding:6px 2px">'+(j.error||'something went wrong — email support@slickfast.com')+'</div>';
+      btn.disabled=false;btn.textContent='Get your key instantly';
+    }
+  }catch(err){
+    out.style.display='block';
+    out.innerHTML='<div style="color:var(--muted);font-size:13.5px;padding:6px 2px">network hiccup — try again, or email support@slickfast.com</div>';
+    btn.disabled=false;btn.textContent='Get your key instantly';
+  }
+  return false;
+}
+</script>
 </body>
 </html>
