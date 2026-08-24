@@ -10,6 +10,7 @@
 - Live charts: permanent image URL whose content updates when you re-push the spec.
 
 ## For agents
+- Get started (onboarding Page): https://slickfast.com/start
 - News (current Page): https://slickfast.com/news
 - Local MCP (free, keyless, renders on-machine): npx @slickfast/mcp
 - Hosted MCP: https://mcp.slickfast.com (OAuth; key, free-tier, and demo sign-in)
