@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Commercial Licensing — SlickFast</title>
 <link rel="canonical" href="https://slickfast.com/license.html">
-<meta name="description" content="SlickFast commercial licensing — free and open source (AGPL-3.0) for non-commercial use; simple per-app licenses for commercial products. No license keys.">
+<meta name="description" content="SlickFast commercial licensing — embed the drawing engine (charts and Pages) in your product under AGPL-3.0 dual license. Hosted API and MCP stay on service plans. No license keys.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230d1522'/%3E%3Cpath d='M8 24 L8 16 L12 16 L12 24 Z M14 24 L14 10 L18 10 L18 24 Z M20 24 L20 13 L24 13 L24 24 Z' fill='%2322d3ee'/%3E%3C/svg%3E">
 <style>
   :root{--bg:#0d1522;--card:#16202f;--border:#243044;--heading:#f1f5f9;--body:#c3cbd8;--muted:#8b9bb0;--teal:#22d3ee;--green:#22c55e}
@@ -43,6 +43,9 @@
   .tier .cta.ghost{background:transparent;border:1px solid var(--border);color:var(--body)}
   .tier .cta:hover{filter:brightness(1.08)}
   .badge{display:inline-block;background:rgba(34,211,238,.12);color:var(--teal);font-size:12px;font-weight:700;letter-spacing:.04em;border-radius:999px;padding:3px 10px;margin-bottom:8px;text-transform:uppercase}
+  .covered{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:18px 20px;margin:8px 0 14px}
+  .covered ul{margin:8px 0 0;padding-left:20px}
+  .covered li{margin-bottom:6px}
   .faq dt{color:var(--heading);font-weight:700;margin:18px 0 4px}
   .faq dd{margin:0 0 4px}
   footer{border-top:1px solid var(--border);margin-top:56px;padding:28px 24px;font-size:14.5px;color:var(--muted);text-align:center}
@@ -63,30 +66,46 @@
 
 <h1>Commercial Licensing</h1>
 <p class="lede">SlickFast is free and open source under <a href="https://www.gnu.org/licenses/agpl-3.0.html">AGPL-3.0</a>.
-Non-commercial use — personal projects, students, open-source work, evaluation — is
-<b>free forever, with everything included</b>. Using the engine inside a commercial
-product takes a commercial license: cheap, per-app, no license keys, no hoops.</p>
-<div class="meta">Licensor: SlickWorks LLC (Wyoming, USA)</div>
+The licensed Software is the <b>drawing engine and packages</b> — JSON spec in, chart or whole
+<b>Page</b> out, same bytes forever. Non-commercial use is <b>free forever</b>. Embedding that
+engine in a commercial product takes a commercial license: cheap, per-app, no license keys,
+no hoops.</p>
+<div class="meta">Licensor: SlickWorks LLC (Wyoming, USA) · Agreement <a href="license-agreement.html">v1.1</a></div>
 
 <h2>Do I need a license?</h2>
 <div class="router">
   <div class="route">
     <span class="ans">No — just pick a plan</span>
-    <b>You call the hosted API</b>
-    Using <code>api.slickfast.com</code> is a service, not a code license.
-    See <a href="index.html#pricing">API pricing</a>.
+    <b>You call the hosted API or hosted MCP</b>
+    Using <code>api.slickfast.com</code> or <code>mcp.slickfast.com</code> is a
+    <b>service</b>, not a code license. Live charts, Share URLs, published Pages, and
+    metered renders stay on <a href="index.html#pricing">API pricing</a>.
   </div>
   <div class="route">
     <span class="ans">Yes — one per app</span>
     <b>You run the engine inside a commercial product</b>
-    Self-hosting or embedding SlickFast in software your company ships or operates
-    commercially — that's what these licenses cover.
+    Self-hosting or embedding SlickFast packages in software your company ships or
+    operates commercially — that's what these licenses cover.
   </div>
   <div class="route">
     <span class="ans">No — it's free</span>
     <b>Personal, academic, open-source, or evaluating</b>
     Use everything, free, forever. Kick the tires as long as you like before buying.
   </div>
+</div>
+
+<h2>What a commercial license covers</h2>
+<div class="covered">
+  <b>Included (the Software you embed)</b>
+  <ul>
+    <li>Drawing engine (<code>render-core</code>) — charts, dashboards, and related types</li>
+    <li>Pages HTML render — a pagespec becomes a designed web document</li>
+    <li>Palettes and accompanying open packages published with the engine</li>
+  </ul>
+  <p style="margin:14px 0 0"><b>Not a substitute for API plans:</b> if you still call
+  <code>api.slickfast.com</code> or our hosted MCP for public URLs, live charts, or
+  hosted Page slots, those remain metered under <a href="index.html#pricing">API pricing</a>.
+  Two paths, one product — pick the one that matches where the code runs.</p>
 </div>
 
 <h2>Licenses</h2>
@@ -97,7 +116,7 @@ product takes a commercial license: cheap, per-app, no license keys, no hoops.</
     <div class="per">per year · one app · teams of 1–3</div>
     <ul>
       <li>Commercial use in one app</li>
-      <li>All 47 types, all palettes</li>
+      <li>Engine + Pages packages, all types &amp; palettes</li>
       <li>Updates while active</li>
       <li>Email support</li>
     </ul>
@@ -110,7 +129,7 @@ product takes a commercial license: cheap, per-app, no license keys, no hoops.</
     <div class="per">per year · one app · any team size</div>
     <ul>
       <li>Commercial use in one app</li>
-      <li>All 47 types, all palettes</li>
+      <li>Engine + Pages packages, all types &amp; palettes</li>
       <li>Updates while active</li>
       <li>Priority email support</li>
     </ul>
@@ -158,6 +177,10 @@ licenses low enough that buying one is easier than not.</p>
   <dt>What counts as "one app"?</dt>
   <dd>One product your company ships or operates. All internal tools for your own team
   together count as one app.</dd>
+  <dt>We only use MCP or Pages on your cloud — do we need this?</dt>
+  <dd><b>No.</b> Hosted MCP, the hosted API, Share URLs, live charts, and published Pages
+  on <code>api.slickfast.com</code> are the <a href="index.html#pricing">service plans</a>.
+  This page is for when <b>your</b> product embeds or self-hosts the engine packages.</dd>
   <dt>Why does commercial use need a license at all?</dt>
   <dd>The engine is AGPL-3.0. Embedding AGPL code in a closed product would require
   open-sourcing your product too. A commercial license releases you from that obligation —
@@ -166,8 +189,8 @@ licenses low enough that buying one is easier than not.</p>
   <dd>Where does the engine run? On <b>your</b> servers (inside your SaaS or backend) —
   Commercial. Shipped out the door and installed at <b>your customers'</b> sites — OEM.</dd>
   <dt>Does using the hosted API put AGPL obligations on me?</dt>
-  <dd>No. Calling <code>api.slickfast.com</code> is using a service — no code license
-  involved, no copyleft. See the <a href="terms.html">Terms</a>.</dd>
+  <dd>No. Calling <code>api.slickfast.com</code> (or hosted MCP) is using a service — no
+  code license involved, no copyleft. See the <a href="terms.html">Terms</a>.</dd>
   <dt>Can I evaluate before buying?</dt>
   <dd>Yes — evaluation is free, full-featured, and untimed. Buy when you ship.</dd>
 </dl>
