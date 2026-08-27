@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Privacy Policy — SlickFast</title>
 <link rel="canonical" href="https://slickfast.com/privacy.html">
-<meta name="description" content="Privacy Policy for slickfast.com and the SlickFast hosted chart API.">
+<meta name="description" content="Privacy Policy for slickfast.com, the SlickFast hosted API, Pages, and hosted MCP.">
 <meta name="robots" content="noindex">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230d1522'/%3E%3Cpath d='M8 24 L8 16 L12 16 L12 24 Z M14 24 L14 10 L18 10 L18 24 Z M20 24 L20 13 L24 13 L24 24 Z' fill='%2322d3ee'/%3E%3C/svg%3E">
 <style>
@@ -40,48 +40,72 @@
 </div>
 <div class="wrap">
 <h1>Privacy Policy</h1>
-<div class="meta">Effective July 13, 2026 · SlickWorks LLC</div>
+<div class="meta">Effective August 27, 2026 · SlickWorks LLC · Prior: July 13, 2026</div>
 
 <h2>1. Scope</h2>
-<p>This policy covers <code>slickfast.com</code> and the SlickFast API. The local MCP tool
-renders entirely on your machine and sends us nothing — this policy is about the website and
-the hosted API.</p>
+<p>This policy covers <code>slickfast.com</code>, the hosted API (<code>api.slickfast.com</code>), and
+our hosted MCP (<code>mcp.slickfast.com</code>). The <b>local</b> MCP
+(<code>npx @slickfast/mcp</code> / a checkout on your machine) renders on your device and
+sends us nothing unless you call a hosted tool that needs a key (share, publish, and similar).</p>
 
 <h2>2. What we collect</h2>
-<p>Your email; a stored API key; usage and metering data (render counts, timestamps); the chart
-data you send us to render or store as live charts; and basic technical logs (IP and request
-metadata) for security and abuse prevention. <b>Payment details go directly to Polar — we never
-see or store your card.</b></p>
+<p>Your email (for keys and account); a stored API key; usage and metering data (render counts,
+timestamps); specs and content you ask us to <b>host</b> (live charts, published Pages,
+short-lived share URLs); and basic technical logs (IP and request metadata) for security and
+abuse prevention. Free-key signup on our API stores a <b>hash of your email</b>, not the
+plaintext address, in our key file. <b>Payment details go directly to Polar — we never see or
+store your card.</b></p>
+<p>One-shot renders that are not published or shared are processed to return an image and are
+not kept as a lasting hosted document.</p>
 
 <h2>3. How we use it</h2>
 <p>To provide and meter the service, bill you (via Polar), prevent abuse, and provide support.
 <b>We do not sell your data.</b></p>
 
 <h2>4. Who we share with</h2>
-<p>Polar (payments and tax), our hosting and CDN providers (to run the service), and no one
-else except where legally required.</p>
+<p>Polar (payments and tax), our hosting and CDN providers (to run and serve the service), and
+no one else except where legally required.</p>
 
-<h2>5. Live-chart data</h2>
-<div class="callout"><b>Live-chart data is not private.</b> Live charts are served at
-unguessable ("unlisted") URLs. Unguessable is not the same as private — <b>anyone who has the
-link can view the current chart.</b> Treat the link like the data it shows; sharing the link
-shares the data. Delete a live chart to revoke its link at any time.</div>
+<h2>5. Unlisted links are not private</h2>
+<div class="callout"><b>Live charts, published Pages, and share URLs are not private.</b>
+They are served at unguessable (“unlisted”) URLs. Unguessable is not the same as private —
+<b>anyone who has the link can view the content.</b> Treat the link like the data it shows.
+Sharing the link shares the data.</div>
+<p>For Pages and many chart URLs, adding <code>.json</code> to the same address returns the
+<b>twin</b> — the exact JSON recipe. Anyone with the link can fetch that twin. Do not publish
+secrets, passwords, or personal data you would not share with everyone holding the URL.</p>
 
-<h2>6. Retention</h2>
+<h2>6. Pages</h2>
+<p>When you publish a Page, we store the pagespec and the rendered HTML so we can serve the
+Page URL and its twin. Free-tier Pages last up to <b>7 days</b> (and may show a watermark).
+Paid Pages are <b>permanent</b> until you delete them. You can revoke a Page you own
+(<code>DELETE</code> with your key); after revoke, the URL answers gone and stays gone.</p>
+
+<h2>7. Live charts</h2>
+<p>Live charts store the spec (and any data you push) so the URL can update. You can delete a
+live chart you own at any time to revoke its link.</p>
+
+<h2>8. Share / ephemeral URLs</h2>
+<p>Short-lived share URLs store the chart spec so chat and agents can display an image from a
+link. They expire on a short TTL (typically days). Treat them like any other unlisted link.</p>
+
+<h2>9. Retention</h2>
 <p>We keep account and key data while your account is active. <b>Live charts expire after 90
 days without updates</b> (any data push resets the clock), after which they are deleted and
-their URLs stop resolving. Technical logs are kept only as long as needed for security.</p>
+their URLs stop resolving. Free Pages expire on their TTL. Paid Pages stay until you delete
+them. Share URLs expire on their TTL. Technical logs are kept only as long as needed for
+security.</p>
 
-<h2>7. Your rights</h2>
-<p>You can request access to or deletion of your data, and you can delete your live charts
-yourself at any time. <a href="mailto:feedback@slickfast.com">Contact us</a> to exercise these
+<h2>10. Your rights</h2>
+<p>You can request access to or deletion of your data, and you can delete live charts and Pages
+you own yourself. <a href="mailto:feedback@slickfast.com">Contact us</a> to exercise these
 rights. We honor GDPR- and CCPA-style requests regardless of where you are located.</p>
 
-<h2>8. Cookies</h2>
+<h2>11. Cookies</h2>
 <p>The site is static and sets no tracking cookies. Checkout happens on Polar's pages under
 Polar's policies.</p>
 
-<h2>9. Changes &amp; contact</h2>
+<h2>12. Changes &amp; contact</h2>
 <p>We will post updates here with a new effective date.
 Questions: <a href="mailto:feedback@slickfast.com">feedback@slickfast.com</a></p>
 </div>

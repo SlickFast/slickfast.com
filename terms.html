@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Terms of Service — SlickFast</title>
 <link rel="canonical" href="https://slickfast.com/terms.html">
-<meta name="description" content="Terms of Service for the SlickFast hosted chart API.">
+<meta name="description" content="Terms of Service for the SlickFast hosted API, Pages, live charts, and hosted MCP.">
 <meta name="robots" content="noindex">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230d1522'/%3E%3Cpath d='M8 24 L8 16 L12 16 L12 24 Z M14 24 L14 10 L18 10 L18 24 Z M20 24 L20 13 L24 13 L24 24 Z' fill='%2322d3ee'/%3E%3C/svg%3E">
 <style>
@@ -40,16 +40,19 @@
 </div>
 <div class="wrap">
 <h1>Terms of Service</h1>
-<div class="meta">Effective July 13, 2026 · SlickWorks LLC ("SlickFast", "we", "us")</div>
+<div class="meta">Effective August 27, 2026 · SlickWorks LLC ("SlickFast", "we", "us") · Prior: July 13, 2026</div>
 
 <h2>1. Acceptance</h2>
-<p>By creating an API key or using the SlickFast API (<code>api.slickfast.com</code>), you agree
-to these Terms. If you use it for an organization, you agree on its behalf.</p>
+<p>By creating an API key or using the SlickFast hosted API (<code>api.slickfast.com</code>) or
+hosted MCP (<code>mcp.slickfast.com</code>), you agree to these Terms. If you use it for an
+organization, you agree on its behalf.</p>
 
 <h2>2. The service</h2>
-<p>SlickFast turns a chart specification into an image (PNG or SVG) over HTTP, and hosts
-"live chart" URLs that serve the latest data you push. We render and serve images — that's
-the service.</p>
+<p>SlickFast turns a JSON specification into a chart or dashboard image (PNG or SVG), hosts
+live chart URLs that serve data you push, publishes <b>Pages</b> (a pagespec rendered as a
+web document at its own URL, with a JSON twin), and may issue short-lived share URLs for
+display. Hosted MCP exposes the same product over MCP. Local MCP on your machine is separate;
+these Terms apply when you use our hosted services.</p>
 
 <h2>3. API keys</h2>
 <p>Keep your key secret. You are responsible for all usage and charges under your key. Tell us
@@ -57,15 +60,16 @@ promptly if it is lost or compromised.</p>
 
 <h2>4. Acceptable use</h2>
 <p>Don't use SlickFast to create or host unlawful, infringing, or harmful content; don't attempt
-to overload, probe, or break the service; don't mass-produce deceptive or misleading charts —
-e.g., fabricated figures presented as real data, or charts intended to spread misinformation;
-and don't resell raw API access as your own identical API. Building your own products
-<i>on top of</i> the API is welcome and encouraged.</p>
+to overload, probe, or break the service; don't mass-produce deceptive or misleading charts or
+Pages — e.g., fabricated figures presented as real data, or content intended to spread
+misinformation; and don't resell raw API access as your own identical API. Building your own
+products <i>on top of</i> the API is welcome and encouraged.</p>
 
 <h2>5. Plans &amp; billing</h2>
-<p>Paid plans are metered in renders. Payments are processed by <b>Polar</b> as our merchant of
-record; Polar's terms govern the transaction, taxes, and refunds. Plans renew until cancelled.
-Your render quota resets each billing period.</p>
+<p>Paid plans are metered in renders (a chart, dashboard, or Page draw). Payments are processed
+by <b>Polar</b> as our merchant of record; Polar's terms govern the transaction, taxes, and
+refunds. Plans renew until cancelled. Your render quota resets each billing period. Page slots
+and live-chart limits follow the plan shown on the site.</p>
 
 <h2>6. Fair use</h2>
 <p>Plans include per-period render limits and per-request rate limits. We may throttle, or
@@ -82,13 +86,15 @@ commercial license — see <a href="license.html">commercial licensing</a>.</p>
 separately agreed in writing. We may change, limit, or discontinue features, giving reasonable
 notice where practical.</p>
 
-<h2>9. Your content &amp; live charts</h2>
-<p>You own the data in your specs and live charts, and grant us only the rights needed to
-render, cache, and serve it to provide the service.</p>
-<div class="callout"><b>Live charts are not private.</b> A live chart is served at an
-unguessable link, but that link is the only protection — <b>anyone who has the link can view
-the current chart.</b> Do not put anything in a live chart that you would not share with
-everyone holding the link. Deleting a live chart revokes its link immediately.</div>
+<h2>9. Your content — live charts, Pages, and shares</h2>
+<p>You own the data in your specs, live charts, and Pages, and grant us only the rights needed
+to render, store, cache, and serve it to provide the service.</p>
+<div class="callout"><b>Unlisted is not private.</b> Live charts, published Pages, and share
+URLs are served at unguessable links. That link is the only protection — <b>anyone who has the
+link can view the content</b>, and for Pages (and many chart URLs) can fetch the
+<code>.json</code> twin. Do not put anything in a hosted URL that you would not share with
+everyone holding the link. Deleting a live chart or Page you own revokes that link. Share URLs
+expire on a short TTL.</div>
 
 <h2>10. Our intellectual property</h2>
 <p>The SlickFast name, logos, marks, website, and hosted service are ours. These Terms transfer
