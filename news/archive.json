@@ -1,0 +1,42 @@
+{
+  "door": "https://slickfast.com/news/",
+  "archive": "https://slickfast.com/news/archive/",
+  "current": 5,
+  "drops": [
+    {
+      "n": 5,
+      "title": "Tiling — combine with tiles",
+      "date": "2026-08-28",
+      "url": "https://api.slickfast.com/s/2354dc7a803b133e9dbf64b850ab6c24",
+      "specHash": "sha256:5be3c5fc7b63a1954a676393457111c028752ea9108afe7e803682fe45de66e2"
+    },
+    {
+      "n": 4,
+      "title": "Agent output becomes a Page",
+      "date": "2026-08-27",
+      "url": "https://api.slickfast.com/s/68d2433a90df583dabbdf3bf4ea5d9b6",
+      "specHash": "sha256:507416915a53d988bfe3e15897115979f6b8c90c822b3e4703cf265faf75dd50"
+    },
+    {
+      "n": 3,
+      "title": "Pages — you are reading a SlickFast Page",
+      "date": "2026-08-26",
+      "url": "https://api.slickfast.com/s/1ba82a178bc8cb5e13893ff2d9a752ed",
+      "specHash": "sha256:157cbb968b9505ea7466aa98af8d61a84f2902475f0bb6e0e41b4e8046671083"
+    },
+    {
+      "n": 2,
+      "title": "MCP 0.7.22",
+      "date": "2026-08-25",
+      "url": "https://api.slickfast.com/s/f68aa18ec49028406afb61bc98bd2325",
+      "specHash": "sha256:0f17036814bbd0c5fe788e1aea13c59cb4987bb4d460cd102705602bcf1b1eec"
+    },
+    {
+      "n": 1,
+      "title": "SlickFast News (first drop)",
+      "date": "2026-08-24",
+      "url": "https://api.slickfast.com/s/d68f721985a21b326d9359b73db5fae7",
+      "specHash": "sha256:0673fb0999764c86e846c21f4912ae042f1cfdf61ca94005d49013f7d999b43b"
+    }
+  ]
+}
