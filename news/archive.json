@@ -1,8 +1,15 @@
 {
   "door": "https://slickfast.com/news/",
   "archive": "https://slickfast.com/news/archive/",
-  "current": 5,
+  "current": 6,
   "drops": [
+    {
+      "n": 6,
+      "title": "Token cost — twin cheap, dump expensive",
+      "date": "2026-08-29",
+      "url": "https://api.slickfast.com/s/ed804dc9cc2f4c0214ab545a6f63f3d0",
+      "specHash": "sha256:09ab06dc96ae2f8036b55cb38c3bbb4e2ef6f8bffbb38f3bb81885b19ddcc86c"
+    },
     {
       "n": 5,
       "title": "Tiling — combine with tiles",
