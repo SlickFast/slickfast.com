@@ -1,8 +1,15 @@
 {
   "door": "https://slickfast.com/news/",
   "archive": "https://slickfast.com/news/archive/",
-  "current": 6,
+  "current": 7,
   "drops": [
+    {
+      "n": 7,
+      "title": "Catch the Tamper — eyes miss it, fingerprints don’t",
+      "date": "2026-09-01",
+      "url": "https://pages.slickfast.com/s/1202ef0f7bc8c541fa51ffcb9caff54d",
+      "specHash": "sha256:9c47edb3e00ea4663c46da9b646eaa7f7d0da7d9675bfd7400f54e597afa3800"
+    },
     {
       "n": 6,
       "title": "Token cost — twin cheap, dump expensive",
