@@ -1,8 +1,15 @@
 {
   "door": "https://slickfast.com/news/",
   "archive": "https://slickfast.com/news/archive/",
-  "current": 7,
+  "current": 8,
   "drops": [
+    {
+      "n": 8,
+      "title": "Schedule a report — your cron, our picture",
+      "date": "2026-09-03",
+      "url": "https://pages.slickfast.com/s/12fc49b6a8cdf10aeadf7d39ee8d893d",
+      "specHash": "sha256:71b285b6de6d2118ae31b6065c3c78c3f92de6673bb22d0094733adf6df0537f"
+    },
     {
       "n": 7,
       "title": "Catch the Tamper — eyes miss it, fingerprints don’t",
