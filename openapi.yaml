@@ -1,11 +1,11 @@
 openapi: 3.0.3
 info:
-  title: SlickFast Chart API
+  title: SlickFast API
   version: "0.3.1"
   description: >
-    Turn a chart spec (one JSON object) into a PNG or SVG image. Only `type` is always
-    required; a spec of just {type, data} renders a complete chart. The full field contract
-    is in render-core/SPEC.md. Deterministic: the same spec always renders the same chart (responses cached immutable).
+    Spec in → PNG or SVG. Only `type` is always required; a spec of just {type, data}
+    renders a complete chart. The full field contract is in render-core/SPEC.md.
+    Deterministic: the same spec always renders the same picture (responses cached immutable).
 servers:
   - url: https://api.slickfast.com
     description: production

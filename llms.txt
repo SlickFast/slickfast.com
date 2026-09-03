@@ -16,7 +16,7 @@
 - News (current Page): https://slickfast.com/news
 - News archive index (agents): https://slickfast.com/news/archive.json
 - Local MCP (free, keyless, renders on-machine): npx -y @slickfast/mcp
-- Hosted MCP: https://mcp.slickfast.com (OAuth; key, free-tier, and demo sign-in)
+- Hosted MCP: https://mcp.slickfast.com/mcp (OAuth; key, free-tier, and demo sign-in)
 - REST API: https://api.slickfast.com — free tier 250 renders/month, no card required
 - Chart spec reference: https://slickfast.com/docs.html
 - OpenAPI: https://slickfast.com/openapi.yaml

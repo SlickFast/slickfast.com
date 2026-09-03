@@ -37,6 +37,9 @@
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="icon" type="image/png" href="/favicon-32.png" sizes="32x32">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root{
     --bg:#0d1522; --card:#16202f; --border:#243044;
@@ -285,7 +288,7 @@
   <div class="wrap">
     <div class="kicker">Live examples</div>
     <h2>Open the Page. Add .json. Look at the bottom.</h2>
-    <p class="sectionsub">Each of these is a real Page. Don’t trust us — check the math.</p>
+    <p class="sectionsub">Each of these is a real Page.</p>
     <div class="exgrid">
       <a class="ex" href="https://pages.slickfast.com/s/6ced56513246042c765dace4d4ec77b6">
         <b>A deterministic render engine</b>
@@ -307,12 +310,29 @@
         <span>One dataset, three chart types.</span>
         <span class="twin">Twin → add .json</span>
       </a>
-      <a class="ex" href="https://pages.slickfast.com/s/f354bad8065c5251aa4904b1a6351644">
+      <a class="ex" href="https://pages.slickfast.com/s/5dd4e4224c7a37461c212eff19e34ced">
         <b>Catch the Tamper</b>
         <span>What happens when the data is altered.</span>
         <span class="twin">Twin → add .json</span>
       </a>
+      <a class="ex" href="https://pages.slickfast.com/s/62f561c77ed8f58bec9b52acc6a970cc">
+        <b>Get started</b>
+        <span>First-minute map for people and agents.</span>
+        <span class="twin">Twin → add .json</span>
+      </a>
     </div>
+  </div>
+</section>
+
+<section id="why">
+  <div class="wrap">
+    <div class="kicker">Why it matters</div>
+    <h2>Agents cannot draw. They can only write code.</h2>
+    <p class="sectionsub" style="margin-bottom:0">They force a browser to paint a picture, then take a
+    screenshot they can’t even verify. SlickFast doesn’t use a browser. It <b>renders</b>.
+    Spec in, same bytes out. Forever. The twin at <code>.json</code> is the exact recipe —
+    the source, not an export. The fingerprint on the Page is the proof it matches.
+    Don’t trust us. Check the math.</p>
   </div>
 </section>
 
@@ -321,7 +341,7 @@
     <div class="kicker">Try it</div>
     <h2>A chart needs no key. A public Page does.</h2>
     <p class="sectionsub">Connect local MCP, then ask. Hosted MCP (claude.ai and cloud agents): paste
-    <code style="color:var(--teal)">mcp.slickfast.com</code> — that path is metered like the API.</p>
+    <code style="color:var(--teal)">https://mcp.slickfast.com/mcp</code> — that path is metered like the API.</p>
     <div class="trygrid">
       <div class="try">
         <b>On your machine — no key</b>
@@ -397,16 +417,7 @@
     then push new data whenever it changes. Every copy, everywhere, updates. SVG median in the
     public bench is about 15 microseconds; that is the engine clock, not the network.</p>
 
-    <div class="herochart">
-      <img src="https://api.slickfast.com/live/7eb0085dd74015764d54ec73ce4ee8bf.svg"
-        alt="SlickFast's own live pulse dashboard — real npm downloads, GitHub stats, CI health and commit activity, updating automatically"
-        width="1404" height="835">
-      <div class="liveline"><span class="dot"></span><b>This image is live.</b> These are our
-      real numbers, right now — npm downloads, CI, commits — refreshed automatically by a
-      20-line script. Nobody re-uploads this image. Yours can do this.</div>
-    </div>
-
-    <p class="sectionsub" style="margin-top:26px"><b>The whole trick, in three lines:</b><br>
+    <p class="sectionsub" style="margin-top:8px"><b>The whole trick, in three lines:</b><br>
     1&nbsp;·&nbsp;<b>Create</b> — one call stores your chart and returns its permanent URL.<br>
     2&nbsp;·&nbsp;<b>Push</b> — your script (or your AI agent) sends fresh numbers whenever they change.<br>
     3&nbsp;·&nbsp;<b>Done</b> — every embed of that URL shows the latest data within seconds of a
@@ -437,18 +448,6 @@
   </div>
 </section>
 
-<section id="why">
-  <div class="wrap">
-    <div class="kicker">Why it matters</div>
-    <h2>Agents cannot draw. They can only write code.</h2>
-    <p class="sectionsub" style="margin-bottom:0">They force a browser to paint a picture, then take a
-    screenshot they can’t even verify. SlickFast doesn’t use a browser. It <b>renders</b>.
-    Spec in, same bytes out. Forever. The twin at <code>.json</code> is the exact recipe —
-    the source, not an export. The fingerprint on the Page is the proof it matches.
-    Don’t trust us. Check the math.</p>
-  </div>
-</section>
-
 <section id="pricing">
   <div class="wrap">
     <div class="kicker">Pricing</div>
@@ -456,7 +455,7 @@
     <p class="sectionsub">A render is one chart, one dashboard, or one Page draw. CDN-cached — one render
     can serve any number of views.</p>
     <div class="freecall">
-      <h3>Using SlickFast with your agent? <span>That's free.</span></h3>
+      <h3>Local MCP is free. <span>A public URL is a plan.</span></h3>
       <p>The <b>local MCP</b> runs on your machine — <b>free forever, unlimited renders</b>, all 47
       types, no account, no card, nothing sent anywhere. The plans below are for the
       <b>hosted API</b> and <b>our MCP server</b>: public chart URLs, live charts, and Pages.
