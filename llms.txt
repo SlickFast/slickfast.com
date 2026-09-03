@@ -24,7 +24,7 @@
 ## Pricing
 - Local MCP: free forever, unlimited renders on your machine.
 - Hosted Free: 250 renders/month, no card. Paid tiers: https://slickfast.com/#pricing
-- Commercial license (self-host without AGPL obligations): https://slickfast.com/license.html
+- Closed commercial products (embed or self-host without AGPL): commercial licenses from $99/year — https://slickfast.com/license.html
 
 ## Source
 - AGPL-3.0, open source: https://github.com/SlickFast/slickfast
