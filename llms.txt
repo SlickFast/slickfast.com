@@ -1,26 +1,29 @@
 # SlickFast
-> Deterministic chart and dashboard renderer for AI agents and automations.
-> JSON spec in → SVG/PNG out. Pure JS, no headless browser. 47 chart types.
+> A deterministic render engine. Not a charting library.
+> Spec in, same bytes out. Forever. Charts, boards, and Pages. No headless browser.
 
 ## What it does
-- POST a JSON spec, get a chart. Milliseconds per render.
+- Spec in → SVG/PNG or a whole Page. Same spec, same bytes, forever.
 - 47 types — bar, line, pie, dashboards, gauges, funnels, calendars, KPIs — one schema.
-- Deterministic: same spec = byte-identical image, forever.
 - A full dashboard (many tiles) is ONE image render.
 - Live charts: permanent image URL whose content updates when you re-push the spec.
+- Pages: a whole document from one spec, at a public URL. Twin at that URL plus `.json` (the source, not an export). Fingerprint on the Page must match it. Don’t trust us. Check the math.
 
 ## For agents
+- Engine explainer (a Page): https://pages.slickfast.com/s/6ced56513246042c765dace4d4ec77b6
+- Twin (the recipe): https://pages.slickfast.com/s/6ced56513246042c765dace4d4ec77b6.json
 - Get started (onboarding Page): https://slickfast.com/start
 - News (current Page): https://slickfast.com/news
 - News archive index (agents): https://slickfast.com/news/archive.json
-- Local MCP (free, keyless, renders on-machine): npx @slickfast/mcp
+- Local MCP (free, keyless, renders on-machine): npx -y @slickfast/mcp
 - Hosted MCP: https://mcp.slickfast.com (OAuth; key, free-tier, and demo sign-in)
 - REST API: https://api.slickfast.com — free tier 250 renders/month, no card required
 - Chart spec reference: https://slickfast.com/docs.html
 - OpenAPI: https://slickfast.com/openapi.yaml
 
 ## Pricing
-- Free: 250 renders/month, no card. Paid tiers: https://slickfast.com/#pricing
+- Local MCP: free forever, unlimited renders on your machine.
+- Hosted Free: 250 renders/month, no card. Paid tiers: https://slickfast.com/#pricing
 - Commercial license (self-host without AGPL obligations): https://slickfast.com/license.html
 
 ## Source
