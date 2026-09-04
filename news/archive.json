@@ -1,8 +1,15 @@
 {
   "door": "https://slickfast.com/news/",
   "archive": "https://slickfast.com/news/archive/",
-  "current": 9,
+  "current": 10,
   "drops": [
+    {
+      "n": 10,
+      "title": "Why take a free key — keep it in the world",
+      "date": "2026-09-04",
+      "url": "https://pages.slickfast.com/s/4d543366fc3d80ee812dab6fbe676041",
+      "specHash": "sha256:495aa1303079ef42965841b27c7d03dc09b2c38b27a0d1f10281c92a2718af57"
+    },
     {
       "n": 9,
       "title": "My Pages — inventory as a Page",
