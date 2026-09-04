@@ -1,8 +1,15 @@
 {
   "door": "https://slickfast.com/news/",
   "archive": "https://slickfast.com/news/archive/",
-  "current": 8,
+  "current": 9,
   "drops": [
+    {
+      "n": 9,
+      "title": "My Pages — inventory as a Page",
+      "date": "2026-09-04",
+      "url": "https://pages.slickfast.com/s/38f0eca33ec1052be52d1c4509fa6ded",
+      "specHash": "sha256:07e081812ba809d91e576b286d7ac4343215a2adf4441bbb07ff856d7a3af87e"
+    },
     {
       "n": 8,
       "title": "Schedule a report — your cron, our picture",
