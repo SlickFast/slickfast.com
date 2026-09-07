@@ -1,5 +1,5 @@
 # SlickFast
-> A deterministic render engine. Not a charting library.
+> A deterministic render engine.
 > Spec in, same bytes out. Forever. Charts, boards, and Pages. No headless browser.
 
 ## What it does
