@@ -1,8 +1,15 @@
 {
   "door": "https://slickfast.com/news/",
   "archive": "https://slickfast.com/news/archive/",
-  "current": 10,
+  "current": 11,
   "drops": [
+    {
+      "n": 11,
+      "title": "How to keep a Page — disk vs URL",
+      "date": "2026-09-09",
+      "url": "https://pages.slickfast.com/s/fdff5f0666c3caca0931afe7434208f8",
+      "specHash": "sha256:0ae87a23cff1200a692f26a25aac368fa6b1b8d0b2621a698c4e4763f49f4d18"
+    },
     {
       "n": 10,
       "title": "Why take a free key — keep it in the world",
