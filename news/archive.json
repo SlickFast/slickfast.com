@@ -1,8 +1,15 @@
 {
   "door": "https://slickfast.com/news/",
   "archive": "https://slickfast.com/news/archive/",
-  "current": 11,
+  "current": 12,
   "drops": [
+    {
+      "n": 12,
+      "title": "sci-core is live — Scientific charts. Same engine. Same bytes. Free.",
+      "date": "2026-09-11",
+      "url": "https://pages.slickfast.com/s/4c22c425a4df447ff50ee690e17c7589",
+      "specHash": "sha256:afc6ee6d12208937955d60d9a415fd806537292dac4ae0585f6ff036ca421d47"
+    },
     {
       "n": 11,
       "title": "How to keep a Page — disk vs URL",
