@@ -1,10 +1,11 @@
 # SlickFast
-> A deterministic render engine.
-> Spec in, same bytes out. Forever. Charts, boards, and Pages. No headless browser.
+> JSON in. Chart or Page out.
+> Same picture forever. Survival, volcano, real log axes — same engine, free. No headless browser.
 
 ## What it does
 - Spec in → SVG/PNG or a whole Page. Same spec, same bytes, forever.
-- 47 types — bar, line, pie, dashboards, gauges, funnels, calendars, KPIs — one schema.
+- 47 gallery types — bar, line, pie, dashboards, gauges, funnels, calendars, KPIs.
+- Eight scientific types on the same engine: scatter, errorbar, lineplot, barplot, survival, blandaltman, qq, volcano. Call describe_type. Not in the 47 gallery board. News #12: https://slickfast.com/news
 - A full dashboard (many tiles) is ONE image render.
 - Live charts: permanent image URL whose content updates when you re-push the spec.
 - Pages: a whole document from one spec, at a public URL. Twin at that URL plus `.json` (the source, not an export). Fingerprint on the Page must match it. Don’t trust us. Check the math.
@@ -15,6 +16,7 @@
 - Get started (onboarding Page): https://slickfast.com/start
 - News (current Page): https://slickfast.com/news
 - News archive index (agents): https://slickfast.com/news/archive.json
+- Sci showcase (night lab): https://pages.slickfast.com/s/85667e0273cc0c4fbe5096afe8e6e4f1
 - Local MCP (free, keyless, renders on-machine): npx -y @slickfast/mcp
 - Hosted MCP: https://mcp.slickfast.com/mcp (OAuth; key, free-tier, and demo sign-in)
 - REST API: https://api.slickfast.com — free tier 250 renders/month, no card required
