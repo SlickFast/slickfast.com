@@ -192,6 +192,14 @@
   .lightbox img{max-width:100%;max-height:100%;border-radius:10px;box-shadow:0 20px 80px rgba(0,0,0,.6)}
   .lightbox .hint{position:absolute;bottom:16px;left:0;right:0;text-align:center;font-size:13px;color:var(--muted)}
 
+  .opsband{display:grid;grid-template-columns:1.1fr 1fr;gap:28px;align-items:center;background:var(--card);border:1px solid var(--border);border-radius:16px;padding:20px}
+  .opsband:hover{border-color:var(--teal);text-decoration:none}
+  .opsband img{width:100%;height:auto;border-radius:10px;display:block}
+  .opsband b{display:block;color:var(--heading);font-size:24px;line-height:1.25;margin-bottom:10px}
+  .opsband span{display:block;color:var(--muted);font-size:15.5px}
+  .opsband .go{color:var(--teal);font-weight:700;margin-top:14px}
+  @media (max-width:760px){.opsband{grid-template-columns:1fr}}
+
   footer{border-top:1px solid var(--border);padding:44px 0 60px;font-size:14.5px;color:var(--muted)}
   .foot{display:flex;flex-wrap:wrap;gap:10px 28px;margin-bottom:16px}
   .madewith{color:var(--muted)}
@@ -206,6 +214,7 @@
     <nav class="links">
       <a href="/start/">Get started</a>
       <a href="/news/">News</a>
+      <a href="/ops/">Ops</a>
       <a href="#gallery">Gallery</a>
       <a href="/deck">Live Deck</a>
       <a href="#install">Install</a>
@@ -281,6 +290,21 @@
         <p>Visible in the chrome. If it matches the twin, nothing changed. If it doesn’t, something did.</p>
       </div>
     </div>
+  </div>
+</section>
+
+<section id="ops" style="padding:36px 0 8px">
+  <div class="wrap">
+    <a class="opsband" href="/ops/">
+      <img src="/assets/ops/alert-sample-landscape.png" alt="Alert card: checkout failures at 31.4% against a 20% threshold, with the graph" width="2400" height="920" loading="lazy">
+      <div>
+        <div class="kicker">New · SlickFast Ops</div>
+        <b>Self-hosted Grafana alerts, with the graph.</b>
+        <span>The number, the threshold and the graph of what fired, by email or Slack. Runs on your server.
+          $499 founding install.</span>
+        <span class="go">See SlickFast Ops →</span>
+      </div>
+    </a>
   </div>
 </section>
 
