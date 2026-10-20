@@ -103,6 +103,18 @@
 
   footer{border-top:1px solid var(--border);padding:40px 0 56px;font-size:14px;color:var(--muted)}
   footer p{margin-bottom:8px}
+  .ggrid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+  @media (max-width:760px){.ggrid{grid-template-columns:1fr}}
+  .gcard{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:12px;margin:0}
+  .gcard img{width:100%;height:auto;border-radius:8px;display:block;cursor:zoom-in}
+  .gcard figcaption{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 12px;padding:10px 4px 2px;font-size:14px;color:var(--muted)}
+  .gcard figcaption b{color:var(--heading);font-size:15.5px}
+  .gcard .phone{margin-left:auto;font-size:13.5px}
+  .bench{border-collapse:collapse;width:100%;margin-bottom:10px;font-size:15px}
+  .bench th,.bench td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--border)}
+  .bench th{color:var(--muted);font-weight:600}
+  .bench td:not(:first-child),.bench th:not(:first-child){text-align:right}
+  .bench td{color:var(--heading);font-variant-numeric:tabular-nums}
   .quote{border-left:3px solid var(--teal);padding:4px 0 4px 16px;margin:0 0 20px;color:var(--heading);font-size:18px;max-width:760px}
   .quote cite{display:block;font-style:normal;font-size:13.5px;color:var(--muted);margin-top:6px}
   .lightbox{position:fixed;inset:0;background:rgba(5,10,18,.93);display:none;align-items:center;justify-content:center;z-index:100;padding:26px;cursor:zoom-out}
@@ -118,6 +130,7 @@
     <nav class="links">
       <a href="#alerts" class="hide-sm">Alerts</a>
       <a href="#boards" class="hide-sm">Boards</a>
+      <a href="#gallery" class="hide-sm">Gallery</a>
       <a href="#security" class="hide-sm">Security</a>
       <a href="#price">Price</a>
     </nav>
@@ -249,6 +262,97 @@
   </div>
 </section>
 
+<section id="gallery" style="padding-top:8px">
+  <div class="wrap">
+    <div class="kicker">Gallery</div>
+    <h2>Every ready-made board</h2>
+    <p class="sectionsub">Ten boards, each in a phone shape and a 1920 × 1080 screen shape. Pick one on the setup page,
+      preview it on your own data, and it goes live. Drawn here by the real templates with sample data.</p>
+    <div class="ggrid">
+      <figure class="gcard">
+        <img src="/assets/ops/gallery/servers-landscape.png" alt="Server Health board, screen shape, sample data" width="1920" height="1080" loading="lazy">
+        <figcaption><b>Server Health</b><span>Needs: servers, from node exporter</span><a href="/assets/ops/gallery/servers-portrait.png" class="phone">Phone version</a></figcaption>
+      </figure>
+      <figure class="gcard">
+        <img src="/assets/ops/gallery/webapp-landscape.png" alt="Web app / API board, screen shape, sample data" width="1920" height="1080" loading="lazy">
+        <figcaption><b>Web app / API</b><span>Needs: request metrics from your app</span><a href="/assets/ops/gallery/webapp-portrait.png" class="phone">Phone version</a></figcaption>
+      </figure>
+      <figure class="gcard">
+        <img src="/assets/ops/gallery/website-landscape.png" alt="Website uptime board, screen shape, sample data" width="1920" height="1080" loading="lazy">
+        <figcaption><b>Website uptime</b><span>Needs: blackbox exporter</span><a href="/assets/ops/gallery/website-portrait.png" class="phone">Phone version</a></figcaption>
+      </figure>
+      <figure class="gcard">
+        <img src="/assets/ops/gallery/postgres-landscape.png" alt="Postgres board, screen shape, sample data" width="1920" height="1080" loading="lazy">
+        <figcaption><b>Postgres</b><span>Needs: postgres exporter</span><a href="/assets/ops/gallery/postgres-portrait.png" class="phone">Phone version</a></figcaption>
+      </figure>
+      <figure class="gcard">
+        <img src="/assets/ops/gallery/redis-landscape.png" alt="Redis board, screen shape, sample data" width="1920" height="1080" loading="lazy">
+        <figcaption><b>Redis</b><span>Needs: redis exporter</span><a href="/assets/ops/gallery/redis-portrait.png" class="phone">Phone version</a></figcaption>
+      </figure>
+      <figure class="gcard">
+        <img src="/assets/ops/gallery/checkout-landscape.png" alt="Checkout &amp; revenue board, screen shape, sample data" width="1920" height="1080" loading="lazy">
+        <figcaption><b>Checkout &amp; revenue</b><span>Needs: an orders table (SQL)</span><a href="/assets/ops/gallery/checkout-portrait.png" class="phone">Phone version</a></figcaption>
+      </figure>
+      <figure class="gcard">
+        <img src="/assets/ops/gallery/daily-business-landscape.png" alt="Today's business board, screen shape, sample data" width="1920" height="1080" loading="lazy">
+        <figcaption><b>Today's business</b><span>Needs: orders and signups (SQL)</span><a href="/assets/ops/gallery/daily-business-portrait.png" class="phone">Phone version</a></figcaption>
+      </figure>
+      <figure class="gcard">
+        <img src="/assets/ops/gallery/sensors-landscape.png" alt="Sensors board, screen shape, sample data" width="1920" height="1080" loading="lazy">
+        <figcaption><b>Sensors</b><span>Needs: sensor readings (SQL)</span><a href="/assets/ops/gallery/sensors-portrait.png" class="phone">Phone version</a></figcaption>
+      </figure>
+      <figure class="gcard">
+        <img src="/assets/ops/gallery/cold-storage-landscape.png" alt="Cold storage board, screen shape, sample data" width="1920" height="1080" loading="lazy">
+        <figcaption><b>Cold storage</b><span>Needs: freezer temperatures (SQL)</span><a href="/assets/ops/gallery/cold-storage-portrait.png" class="phone">Phone version</a></figcaption>
+      </figure>
+      <figure class="gcard">
+        <img src="/assets/ops/gallery/energy-landscape.png" alt="Energy / solar board, screen shape, sample data" width="1920" height="1080" loading="lazy">
+        <figcaption><b>Energy / solar</b><span>Needs: power meters (SQL)</span><a href="/assets/ops/gallery/energy-portrait.png" class="phone">Phone version</a></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section id="speed" style="padding-top:8px">
+  <div class="wrap">
+    <div class="kicker">Speed</div>
+    <h2>Big boards, lots of data, still fast</h2>
+    <p class="sectionsub">One 4K wall board with 21 tiles and 15 kinds of chart, 9,133 numbers in all, drawn in 8 ms.
+      Grafana's data doesn't slow the drawing down: each line is thinned to what a tile can show before it's drawn.</p>
+    <div class="shot" style="margin-bottom:24px">
+      <img src="/assets/ops/hell-4k.png" alt="A 3840 by 2160 wall board with 21 tiles: numbers, lines, stacked areas, a heatmap, gauges, a ring, bars, a waterfall, a funnel, a leaderboard, a donut, progress bars, bullets and a table" width="3840" height="2160" loading="lazy">
+      <div class="cap"><b>3840 × 2160, 21 tiles.</b> Drawn by the SlickFast engine in 8 ms. Sample data.</div>
+    </div>
+    <div class="two">
+      <div>
+        <h3>More data from Grafana</h3>
+        <table class="bench">
+          <tr><th>Numbers from Grafana</th><th>Draw</th><th>Total</th></tr>
+          <tr><td>2,000</td><td>2 ms</td><td>3 ms</td></tr>
+          <tr><td>20,000</td><td>2 ms</td><td>6 ms</td></tr>
+          <tr><td>200,000</td><td>2 ms</td><td>40 ms</td></tr>
+          <tr><td>2,000,000</td><td>1 ms</td><td>110 ms</td></tr>
+        </table>
+        <p class="note">The Web app / API board, 8 tiles. The draw stays flat; reading the data is what grows.
+          Grafana's own query time is not included.</p>
+      </div>
+      <div>
+        <h3>More tiles on the board</h3>
+        <table class="bench">
+          <tr><th>Tiles</th><th>Numbers</th><th>Draw</th></tr>
+          <tr><td>21</td><td>17,773</td><td>10 ms</td></tr>
+          <tr><td>63</td><td>53,305</td><td>24 ms</td></tr>
+          <tr><td>126</td><td>106,603</td><td>51 ms</td></tr>
+          <tr><td>210</td><td>177,667</td><td>78 ms</td></tr>
+        </table>
+        <p class="note">Ten copies of the 4K board stacked into one, as a stress test.</p>
+      </div>
+    </div>
+    <p class="note" style="margin-top:20px">Measured 2026-10-20 on an Apple M1 Max laptop (Node 26), middle of 3 to 5 runs.
+      Drawing means the board's SVG; a 4K PNG adds about 0.3 s.</p>
+  </div>
+</section>
+
 <section id="how">
   <div class="wrap">
     <div class="kicker">How it works</div>
@@ -359,7 +463,10 @@
 <div class="lightbox" id="lightbox"><img alt=""></div>
 <script>
 var lb = document.getElementById('lightbox'), lbimg = lb.querySelector('img');
-document.querySelectorAll('.shot img').forEach(function(img){
+document.querySelectorAll('.gcard .phone').forEach(function(a){
+  a.addEventListener('click', function(e){ e.preventDefault(); lbimg.src = a.href; lb.classList.add('open'); });
+});
+document.querySelectorAll('.shot img, .gcard img').forEach(function(img){
   img.addEventListener('click', function(){ lbimg.src = img.src; lbimg.alt = img.alt; lb.classList.add('open'); });
 });
 lb.addEventListener('click', function(){ lb.classList.remove('open'); });
