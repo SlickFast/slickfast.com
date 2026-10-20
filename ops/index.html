@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>SlickFast Ops — alerts with the graph and live boards, on your own server</title>
-<meta name="description" content="For self-hosted Grafana: alerts with the graph by email or Slack, and live boards at a link for phones and wall TVs. No Chrome renderer, no cloud. Installed on your server with you.">
+<title>SlickFast Ops: alert cards with the graph, for self-hosted Grafana</title>
+<meta name="description" content="Alert cards for self-hosted Grafana: the value, the threshold and the graph of the rule's own query, by email or Slack. Boards for a phone and a wall TV. Installed on your server with you.">
 <link rel="canonical" href="https://slickfast.com/ops/">
-<meta property="og:title" content="SlickFast Ops — alerts with the graph">
+<meta property="og:title" content="SlickFast Ops: alert cards with the graph">
 <meta property="og:description" content="Readable alerts for self-hosted Grafana: the number, the threshold and the graph, by email or Slack. Installed on your server.">
 <meta property="og:url" content="https://slickfast.com/ops/">
 <meta property="og:image" content="https://slickfast.com/assets/ops/alert-sample-landscape.png">
@@ -98,9 +98,13 @@
   .price .big{font-size:44px;font-weight:800;color:var(--heading);letter-spacing:-.02em}
   .price .then{font-size:18px;color:var(--heading);margin:4px 0 18px}
   .price ul{margin-bottom:24px}
+  .guarantee{border:1px solid var(--green);background:rgba(34,197,94,.08);border-radius:12px;padding:14px 18px;margin:0 0 22px;font-size:15.5px;color:var(--body)}
+  .guarantee b{display:block;color:var(--heading);margin-bottom:4px}
 
   footer{border-top:1px solid var(--border);padding:40px 0 56px;font-size:14px;color:var(--muted)}
   footer p{margin-bottom:8px}
+  .quote{border-left:3px solid var(--teal);padding:4px 0 4px 16px;margin:0 0 20px;color:var(--heading);font-size:18px;max-width:760px}
+  .quote cite{display:block;font-style:normal;font-size:13.5px;color:var(--muted);margin-top:6px}
   .lightbox{position:fixed;inset:0;background:rgba(5,10,18,.93);display:none;align-items:center;justify-content:center;z-index:100;padding:26px;cursor:zoom-out}
   .lightbox.open{display:flex}
   .lightbox img{max-width:100%;max-height:100%;border-radius:10px}
@@ -110,12 +114,12 @@
 
 <header>
   <div class="wrap nav">
-    <a class="logo" href="/" style="text-decoration:none">Slick<span class="tick">Fast</span><small>Ops</small></a>
+    <a class="logo" href="/" style="text-decoration:none">Slick<span class="tick">Fast</span> <small>Ops</small></a>
     <nav class="links">
+      <a href="#alerts" class="hide-sm">Alerts</a>
       <a href="#boards" class="hide-sm">Boards</a>
       <a href="#security" class="hide-sm">Security</a>
       <a href="#price">Price</a>
-      <a href="#talk">Talk to us</a>
     </nav>
   </div>
 </header>
@@ -125,86 +129,58 @@
   <div class="hero">
     <div>
       <div class="kicker">For self-hosted Grafana</div>
-      <h1>Alerts you can read at 3am. Boards you can put on any screen.</h1>
-      <p class="sub">Every alert arrives with <b>the number, the threshold and the graph of what fired</b> —
-        by email or Slack. Every board lives at <b>a link</b> that works on a phone or a wall TV.
-        It all runs on your own server, next to Grafana. No Chrome renderer, no cloud, your data never leaves.</p>
+      <h1>Alert cards with the rule's graph, for self-hosted Grafana</h1>
+      <p class="sub">Getting the exact same screenshot for every instance? Each alert shows <b>the value, the threshold
+        and the graph of the rule's own query</b>, for the instance that fired. Boards for a phone and a wall TV come with it.</p>
       <div class="ctas">
         <a class="btn btn-primary" href="mailto:hello@slickfast.com?subject=SlickFast%20Ops&amp;body=Hi%2C%0A%0AGrafana%20version%3A%0AWhere%20it%20runs%20(Docker%20%2F%20server)%3A%0AAlerts%20should%20go%20to%20(email%20%2F%20Slack)%3A%0A%0A">Email us about an install</a>
         <a class="btn btn-ghost" href="#price">$499 founding install</a>
       </div>
-      <p class="note">A person answers: hello@slickfast.com</p>
+      <p class="note">30-day money-back guarantee, from the day we install it. A person answers: hello@slickfast.com</p>
     </div>
     <div class="shot">
       <img src="/assets/ops/alert-sample-portrait.png" alt="Alert card: FIRING, checkout failures high, now 31.4% against a 20% threshold, with the graph crossing the line" width="1620" height="2025">
-      <div class="cap"><b>What lands in Slack.</b> Drawn by the connector. Sample data.</div>
+      <div class="cap"><b>What lands in Slack.</b> Drawn by SlickFast Ops. Sample data.</div>
     </div>
   </div>
 </div>
 
-<section id="boards" style="padding-top:40px">
-  <div class="wrap">
-    <div class="kicker">Live boards</div>
-    <h2>A board at a link. Open it on a TV and walk away.</h2>
-    <p class="sectionsub">Each board gets its own link on your server. The page redraws itself, so a browser on a wall TV
-      stays current with nobody touching it. Your team needs the link, not a Grafana login.</p>
-    <div class="shot" style="margin-bottom:20px">
-      <img src="/assets/ops/board-tv-sample.png" alt="Wall TV board, 1920 by 1080: requests per minute, slowest 5% of requests, errors, uptime, requests by service, latency against a limit, errors per hour, busiest endpoints" width="1920" height="1080">
-      <div class="cap"><b>Screen shape, 1920 × 1080</b> — for a wall TV or a big monitor. Drawn by the connector. Sample data.</div>
-    </div>
-    <div class="boardsrow">
-      <div class="shot">
-        <img src="/assets/ops/board-phone-sample.png" alt="The same board in phone shape: numbers on top, charts stacked below" width="1662" height="2151" loading="lazy">
-        <div class="cap"><b>Phone shape</b> — the same board, laid out for a phone. Sample data.</div>
-      </div>
-      <ul class="checks">
-        <li><b>One link per board.</b> Share it with the team. A key in the link keeps strangers out.</li>
-        <li><b>Stays current by itself.</b> The board redraws every 2 minutes; the page reloads every minute.</li>
-        <li><b>Phone and screen.</b> Every board comes in both shapes, one tap apart.</li>
-        <li><b>Tap any tile</b> to see it big, over 1 h, 6 h, 24 h or 7 days.</li>
-        <li><b>Ready-made boards:</b> servers, websites, web apps, Postgres, Redis, checkout, today's business,
-          sensors, cold storage, energy. Pick one, preview it, go live.</li>
-        <li><b>Your own Grafana dashboards too.</b> On 10 popular community dashboards, 247 of 277 panels drew;
-          the rest had no data.</li>
-        <li><b>Custom boards, built for you,</b> in any size: a phone, a laptop, a TV, a lobby screen.</li>
-        <li><b>A board by email</b> on a schedule, like Server Health every weekday at 08:00.</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
 <section id="why">
   <div class="wrap">
     <div class="kicker">Why now</div>
-    <h2>Self-hosted Grafana lost its alert pictures.</h2>
-    <p class="sectionsub">Pictures in alerts needed a separate Chrome-based renderer service, documented at
-      16 GiB of memory and 4 cores. Grafana 13 (April 2026) removed that renderer plugin, and
-      OnCall OSS was archived in March 2026. Most self-hosted alerts are now a line of text.</p>
+    <h2>Pictures now need a separate renderer service</h2>
+    <p class="sectionsub"><a href="https://grafana.com/whats-new/2026-04-14-grafana-image-renderer-plugin-support-removed/">Grafana 13 removed
+      support for the renderer plugin</a>. For pictures, you now need a separate renderer service, and
+      <a href="https://grafana.com/docs/grafana/latest/setup-grafana/image-rendering/">Grafana's docs</a> ask you to give it at least
+      16 GiB of memory and 4 CPU cores. SlickFast Ops draws panels without Chromium, so there is no renderer service for you to
+      size or keep upgraded.</p>
     <div class="grid3">
       <div class="card"><b>The graph, not a link</b><p>The card graphs the alert rule's own query for the window
-        around the alert, with the threshold drawn in. You see what happened without logging in.</p></div>
-      <div class="card"><b>Less noise</b><p>Alerts that only mean "Grafana lost its data" are kept out of your alert
-        channel, so a real alert stands out. <a href="#noise">How</a></p></div>
-      <div class="card"><b>On your server</b><p>One container next to Grafana. It reads Grafana with a viewer key and
-        sends through your own email server or your Slack. We never host your data.</p></div>
+        around the alert, with the threshold drawn in.</p></div>
+      <div class="card"><b>Less noise</b><p>No data and data source error notices are kept out of your alert channel,
+        so a real alert stands out.</p></div>
+      <div class="card"><b>On your server</b><p>One container next to Grafana. It reads Grafana with a read-only key
+        (Viewer role) and sends through your own mail server or your Slack.</p></div>
     </div>
   </div>
 </section>
 
-<section id="see" style="padding-top:8px">
+<section id="alerts" style="padding-top:8px">
   <div class="wrap">
     <div class="kicker">Alerts</div>
-    <h2>Every alert, readable.</h2>
-    <p class="sectionsub">Phones get a tall card (Slack). Email gets a wide one.</p>
+    <h2>Every alert, with the graph of what fired</h2>
+    <blockquote class="quote">"every instance's notification gets the exact same screenshot"
+      <cite><a href="https://github.com/grafana/grafana/issues/132039">grafana/grafana #132039</a></cite></blockquote>
+    <p class="sectionsub">A SlickFast Ops alert is one card: the value, the threshold and the graph of the rule's own query,
+      with Open board and Silence links. Slack gets a tall card for phones. Email gets a wide one, sent through your own
+      mail server. When it recovers, the card says how long it lasted.</p>
     <div class="shot" style="margin-bottom:24px">
-      <img src="/assets/ops/alert-sample-landscape.png" alt="Alert card, screen shape: the number beside the graph" width="2400" height="920" loading="lazy">
-      <div class="cap"><b>Alert, screen shape</b> — what lands in email. Sample data.</div>
+      <img src="/assets/ops/alert-sample-landscape.png" alt="Alert card, wide shape: the value beside the graph" width="2400" height="920" loading="lazy">
+      <div class="cap"><b>Wide card</b>, what lands in email. Sample data.</div>
     </div>
     <ul class="checks two">
-      <li><b>Open board</b> and <b>Silence</b> links in every alert.</li>
-      <li><b>"Resolved"</b> when it recovers, with how long it lasted.</li>
       <li><b>Ready-made alert rules</b> for servers, websites, Postgres, Redis and apps.</li>
-      <li><b>A weekly report</b> every Monday: what fired, what fired at night, what changed.</li>
+      <li><b>A weekly report</b> every Monday: what fired, what fired at night, how much noise was kept out.</li>
     </ul>
   </div>
 </section>
@@ -212,20 +188,20 @@
 <section id="noise" style="padding-top:8px">
   <div class="wrap">
     <div class="kicker">Noise control</div>
-    <h2>Fewer false alarms in your channel.</h2>
-    <p class="sectionsub">Some of what Grafana sends isn't a problem with your systems. It's Grafana
-      losing sight of its data. The connector spots those, says plainly what happened, and keeps them out of your
-      alert channel.</p>
+    <h2>Keep data source noise out of your alert channel</h2>
     <div class="noisegrid">
-      <ul class="checks">
-        <li><b>No data.</b> An exporter or agent stopped reporting. Grafana calls it an alert; the alert itself
-          never fired.</li>
-        <li><b>Data source error.</b> Grafana couldn't run the query, for example the database refused the
-          connection.</li>
-        <li><b>Fake "resolved".</b> Grafana says an alert recovered because its data disappeared. We say so,
-          instead of an all-clear.</li>
-        <li><b>Repeats.</b> The same alert again within 10 minutes is sent once.</li>
-      </ul>
+      <div>
+        <p style="margin-bottom:18px">Silences and ignore settings only go so far. SlickFast Ops keeps DatasourceNoData and
+          DatasourceError notices out of your alert channel. You pick where they go: a quiet channel, one summary every hour,
+          or nowhere.</p>
+        <ul class="checks">
+          <li><b>No data.</b> An exporter or agent stopped reporting. The alert itself never fired.</li>
+          <li><b>Data source error.</b> Grafana couldn't run the query, for example the database refused the connection.</li>
+          <li><b>Data that disappeared.</b> Sometimes Grafana sends a "resolved" that only means the data went away.
+            SlickFast Ops labels it that way, so you can tell it from a real fix.</li>
+          <li><b>Repeats.</b> The same alert again within 10 minutes is sent once.</li>
+        </ul>
+      </div>
       <div>
         <div class="chat">
           <div class="chathead">Hourly summary · sample</div>
@@ -235,9 +211,40 @@
 • Checkout failures high: Data source error ×6
 • Redis down: Data stopped ×2</pre>
         </div>
-        <p class="note" style="margin-top:12px">Your choice: send this noise to a quiet channel, as one summary every
-          hour, or nowhere. The weekly report counts what was kept out.</p>
+        <p class="note" style="margin-top:12px">The weekly report counts how much noise was kept out.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<section id="boards" style="padding-top:8px">
+  <div class="wrap">
+    <div class="kicker">Live boards</div>
+    <h2>Share a live Grafana board without handing out logins</h2>
+    <p class="sectionsub">Your team wants the board on the wall TV and on their phones. Each SlickFast Ops board gets a link
+      with a key. That link is how you share it, and the board redraws every 2 minutes. It comes in two shapes: phone,
+      and 1920 × 1080 for the wall TV.</p>
+    <div class="shot" style="margin-bottom:20px">
+      <img src="/assets/ops/board-tv-sample.png" alt="Wall TV board, 1920 by 1080: requests per minute, slowest 5% of requests, errors, uptime, requests by service, latency against a limit, errors per hour, busiest endpoints" width="1920" height="1080" loading="lazy">
+      <div class="cap"><b>Screen shape, 1920 × 1080</b>, for a wall TV or a big monitor. Drawn by SlickFast Ops. Sample data.</div>
+    </div>
+    <div class="boardsrow">
+      <div class="shot">
+        <img src="/assets/ops/board-phone-sample.png" alt="The same board in phone shape: numbers on top, charts stacked below" width="1662" height="2151" loading="lazy">
+        <div class="cap"><b>Phone shape.</b> The same board, laid out for a phone. Sample data.</div>
+      </div>
+      <ul class="checks">
+        <li><b>A link with a key.</b> Share it with the team; no Grafana login needed.</li>
+        <li><b>Stays current by itself.</b> The board redraws every 2 minutes and the page reloads every minute,
+          so a TV can be left alone.</li>
+        <li><b>Tap any tile</b> to see it big, over 1 h, 6 h, 24 h or 7 days.</li>
+        <li><b>Ready-made boards:</b> servers, websites, web apps, Postgres, Redis, checkout, today's business,
+          sensors, cold storage, energy.</li>
+        <li><b>Most panels on your own dashboards</b> draw too: on popular community dashboards, 247 of 277 panels
+          drew, and the rest had no data in Grafana either.</li>
+        <li><b>Custom boards, built for you,</b> in any size: a phone, a laptop, a TV, a lobby screen.</li>
+        <li><b>By email on a schedule,</b> like Server Health every weekday at 08:00.</li>
+      </ul>
     </div>
   </div>
 </section>
@@ -245,39 +252,15 @@
 <section id="how">
   <div class="wrap">
     <div class="kicker">How it works</div>
-    <h2>We install it with you.</h2>
-    <p class="sectionsub">One call, your screen, your server. In our last test install on a fresh Grafana 12,
-      the first alert arrived 3 min 53 s after we started. Plan on half an hour.</p>
+    <h2>We install SlickFast Ops with you, on your server</h2>
+    <p class="sectionsub">In our rehearsal on a fresh Grafana 12, the first alert arrived in about 4 minutes.
+      Plan on 20 to 30 minutes for the install. To book, email hello@slickfast.com.</p>
     <div class="steps">
-      <div class="card"><b>Check</b><p>Before the call, a short read-only check of your Grafana tells us what
-        will work and what won't. No surprises on the day.</p></div>
-      <div class="card"><b>Install</b><p>One command starts the connector. A setup page walks through your
+      <div class="card"><b>Check</b><p>We look over your Grafana with a read-only key, so we know what will draw
+        before the call.</p></div>
+      <div class="card"><b>Install</b><p>We start SlickFast Ops on your server. A setup page walks through your
         Grafana key, email or Slack, and the alert rules.</p></div>
-      <div class="card"><b>First alert</b><p>We fire a test alert together and you see the card arrive.
-        Then your real alerts start coming in with the graph.</p></div>
-    </div>
-  </div>
-</section>
-
-<section id="fit" style="padding-top:8px">
-  <div class="wrap two">
-    <div>
-      <h3>A good fit if</h3>
-      <ul class="checks">
-        <li>You run <b>Grafana yourself</b> (not Grafana Cloud).</li>
-        <li>Your alerts go to <b>email or Slack</b>.</li>
-        <li>You want boards on <b>phones or a wall TV</b> without handing out Grafana logins.</li>
-        <li>Your metrics are in <b>Prometheus</b> (our ready-made alert rules use it).</li>
-        <li>You want your data to <b>stay on your servers</b>.</li>
-      </ul>
-    </div>
-    <div>
-      <h3>Not yet</h3>
-      <ul class="checks no">
-        <li>Microsoft Teams, SMS or phone calls</li>
-        <li>One install covering many clients (MSPs: talk to us)</li>
-        <li>Ready-made boards for Kubernetes, MySQL or Windows</li>
-      </ul>
+      <div class="card"><b>First alert</b><p>We fire a test alert together and you see the card arrive.</p></div>
     </div>
   </div>
 </section>
@@ -285,21 +268,49 @@
 <section id="security">
   <div class="wrap">
     <div class="kicker">Security</div>
-    <h2>Built to pass your security review.</h2>
-    <p class="sectionsub">One page for your IT team comes with every install. The short version:</p>
+    <h2>What your IT reviewer will ask, answered</h2>
+    <p class="sectionsub">A one-page security sheet comes with every install. The short version:</p>
     <div class="grid3">
-      <div class="card"><b>Read-only</b><p>It uses a Grafana key with the Viewer role. It cannot change dashboards,
-        alert rules, users or settings. Revoke the key any time.</p></div>
-      <div class="card"><b>No phone home</b><p>No usage statistics, no remote access, no automatic updates.
-        SlickFast staff cannot see your data or reach the connector.</p></div>
-      <div class="card"><b>Your mail, encrypted</b><p>Email goes through your own mail server, encrypted. It refuses
-        to send a password over an unencrypted connection.</p></div>
-      <div class="card"><b>Check what you run</b><p>Every release ships with checksums the installer verifies.
-        The installer is plain shell and the code inside is readable.</p></div>
-      <div class="card"><b>Small footprint</b><p>One container, running as a normal user (not root), no special
-        Docker permissions. One port, which you keep inside your network.</p></div>
-      <div class="card"><b>Easy to remove</b><p>Three commands remove it completely. Alert history keeps facts only
-        (no graphs, no dashboard data) for 60 days.</p></div>
+      <div class="card"><b>Reads</b><p>A read-only Grafana key with the Viewer role. It cannot change dashboards,
+        alert rules, users or settings. Revoke it any time.</p></div>
+      <div class="card"><b>Sends</b><p>Email through your own mail server, encrypted. Slack messages, with the card image,
+        go to the Slack workspace you connect. Nothing else leaves unless you turn it on.</p></div>
+      <div class="card"><b>Public links, only if you want them</b><p>Board links stay on your server. If you turn on
+        public links, that board's picture is served through api.slickfast.com with your key.</p></div>
+      <div class="card"><b>No phone home</b><p>No usage statistics are sent to us. No remote access, no automatic updates.</p></div>
+      <div class="card"><b>Verifies</b><p>Every release ships with checksums the installer checks. The installer is plain
+        shell and the code inside is readable.</p></div>
+      <div class="card"><b>Small and removable</b><p>One container, running as a normal user (not root). One port, for Grafana
+        and your team. Three commands remove it. Alert history keeps facts only, for 60 days.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="fit" style="padding-top:8px">
+  <div class="wrap">
+    <div class="kicker">Fit</div>
+    <h2>A good fit if your Grafana is yours to govern</h2>
+    <blockquote class="quote">"We need this to comply with data governance guidelines."
+      <cite><a href="https://github.com/grafana/grafana-image-renderer/issues/1009">grafana/grafana-image-renderer #1009</a></cite></blockquote>
+    <div class="two">
+      <div>
+        <h3>A good fit if</h3>
+        <ul class="checks">
+          <li>You <b>self-host Grafana</b>. Grafana Cloud is out of scope.</li>
+          <li>You want a <b>read-only Grafana key</b>.</li>
+          <li>Your alerts go to <b>email or Slack</b>.</li>
+          <li>Your metrics are in <b>Prometheus</b> (our ready-made alert rules use it).</li>
+          <li>You want boards for <b>a phone and a 1920 × 1080 screen</b>, at a link with a key.</li>
+          <li>You do client work: <b>one install per client</b>.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Not yet</h3>
+        <ul class="checks no">
+          <li>Microsoft Teams, SMS or phone calls</li>
+          <li>Ready-made boards for Kubernetes, MySQL or Windows</li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
@@ -307,18 +318,20 @@
 <section id="price">
   <div class="wrap">
     <div class="kicker">Founding price</div>
-    <h2>One install. One price.</h2>
+    <h2>$499 founding install, then $99/mo for life</h2>
     <p class="sectionsub">For our first customers.</p>
     <div class="price">
       <div class="big">$499</div>
-      <div class="then">install, with 3 months included. Then $99/month, locked for life.</div>
+      <div class="then">install, with 3 months included. Then $99/mo for life. Cancel any month.</div>
+      <div class="guarantee"><b>30 days on your own Grafana. If it isn't worth it, email us and we refund the full $499.</b>
+        No forms, no call. The 30 days start the day we install it, not the day you pay. <a href="/terms.html#refund">Terms</a></div>
       <ul class="checks">
         <li>We install it with you on a call</li>
-        <li>Alert cards with the graph, by email and Slack</li>
-        <li>Live boards at a link, for phones and TVs</li>
+        <li>Alert cards with the value, the threshold and the graph of the rule's own query, by email and Slack</li>
+        <li>Boards for a phone and a 1920 × 1080 screen, redrawn every 2 minutes</li>
         <li>Ready-made boards and alert rules</li>
-        <li>Weekly report of what fired</li>
-        <li>Updates, and a person to email</li>
+        <li>A weekly report: what fired, what fired at night, how much noise was kept out</li>
+        <li>Updates that keep your settings, and a person to email at hello@slickfast.com</li>
       </ul>
       <a class="btn btn-primary" href="mailto:hello@slickfast.com?subject=SlickFast%20Ops%20founding%20install">Email us to book an install</a>
     </div>
@@ -329,7 +342,7 @@
   <div class="wrap">
     <h2>Questions? Just ask.</h2>
     <p class="sectionsub" style="margin-bottom:20px">Tell us your Grafana version and where your alerts should go.
-      We'll tell you straight if it fits.</p>
+      We will tell you straight if it fits.</p>
     <a class="btn btn-primary" href="mailto:hello@slickfast.com?subject=SlickFast%20Ops&amp;body=Hi%2C%0A%0AGrafana%20version%3A%0AWhere%20it%20runs%20(Docker%20%2F%20server)%3A%0AAlerts%20should%20go%20to%20(email%20%2F%20Slack)%3A%0A%0A">Email hello@slickfast.com</a>
   </div>
 </section>
