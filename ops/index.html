@@ -115,6 +115,12 @@
   .bench th{color:var(--muted);font-weight:600}
   .bench td:not(:first-child),.bench th:not(:first-child){text-align:right}
   .bench td{color:var(--heading);font-variant-numeric:tabular-nums}
+  .keybox{margin-top:20px;background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px 22px}
+  .keybox b{color:var(--heading);font-size:17px;display:block;margin-bottom:6px}
+  .keybox p{font-size:15px;color:var(--muted);margin:8px 0}
+  .keybox pre{background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:12px 14px;font:13px/1.5 ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--body);white-space:pre-wrap;word-break:break-all;margin:8px 0}
+  .keybox code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:13px}
+  .keybox .fp{word-break:break-all}
   .quote{border-left:3px solid var(--teal);padding:4px 0 4px 16px;margin:0 0 20px;color:var(--heading);font-size:18px;max-width:760px}
   .quote cite{display:block;font-style:normal;font-size:13.5px;color:var(--muted);margin-top:6px}
   .lightbox{position:fixed;inset:0;background:rgba(5,10,18,.93);display:none;align-items:center;justify-content:center;z-index:100;padding:26px;cursor:zoom-out}
@@ -398,10 +404,23 @@
       <div class="card"><b>Public links, only if you want them</b><p>Board links stay on your server. If you turn on
         public links, the numbers on each shared board go to api.slickfast.com so its link opens anywhere.</p></div>
       <div class="card"><b>No phone home</b><p>No usage statistics are sent to us. No remote access, no automatic updates.</p></div>
-      <div class="card"><b>Verifies</b><p>Every release ships with checksums the installer checks. The installer is plain
-        shell and the code inside is readable.</p></div>
+      <div class="card"><b>Signed releases</b><p>Every release is signed by SlickFast. The installer checks the signature
+        and every file before installing anything. The installer is plain shell and the code inside is readable.
+        <a href="#release-key">Check it yourself</a></p></div>
       <div class="card"><b>Small and removable</b><p>One container, running as a normal user (not root). One port, for Grafana
         and your team. Three commands remove it. Alert history keeps facts only, for 60 days.</p></div>
+    </div>
+    <div class="keybox" id="release-key">
+      <b>Our release-signing key</b>
+      <p>Compare it with the key inside <code>install.sh</code> and <code>SECURITY.md</code>: all three must match.
+        Download: <a href="/ops/release-key.pem">release-key.pem</a></p>
+<pre>-----BEGIN PUBLIC KEY-----
+MCowBQYDK2VwAyEAY7Mu59PjGcxFoLKbVLOpppS9m7XdPX/KCXNTg47RF1A=
+-----END PUBLIC KEY-----</pre>
+      <p>Fingerprint (SHA-256): <code class="fp">babca00b48e7c71a4ebdb80f3052b32b67c2035b050bc3c377d23d4deccc9a2f</code></p>
+      <p>Check a release (OpenSSL 3+), in the folder with the files:</p>
+<pre>openssl pkeyutl -verify -rawin -pubin -inkey release-key.pem -in SHA256SUMS -sigfile SHA256SUMS.sig</pre>
+      <p>You should see <code>Signature Verified Successfully</code>.</p>
     </div>
   </div>
 </section>
