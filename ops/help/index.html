@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SlickFast Ops help: alerts and boards</title>
+<meta name="description" content="How to add and change alerts, put Grafana dashboards on a phone or TV, share and schedule boards, and keep SlickFast Ops up to date.">
+<link rel="canonical" href="https://slickfast.com/ops/help/">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0d1522; --card:#16202f; --border:#243044;
+    --heading:#f1f5f9; --body:#c3cbd8; --muted:#8b9bb0;
+    --teal:#22d3ee; --green:#22c55e;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--body);font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{color:var(--teal);text-decoration:none}
+  a:hover{text-decoration:underline}
+  h1,h2,h3{color:var(--heading);line-height:1.25}
+  .wrap{max-width:860px;margin:0 auto;padding:0 24px}
+  @media (max-width:560px){.wrap{padding:0 16px}}
+  header{position:sticky;top:0;z-index:10;background:rgba(13,21,34,.9);backdrop-filter:blur(8px);border-bottom:1px solid var(--border)}
+  .nav{display:flex;align-items:center;gap:16px;height:60px}
+  .logo{font-weight:800;font-size:19px;color:var(--heading)}
+  .logo .tick{color:var(--teal)}
+  .logo small{font-weight:600;color:var(--muted);font-size:15px;margin-left:6px}
+  .nav .links{display:flex;gap:16px;margin-left:auto;font-size:15px}
+  .nav .links a{color:var(--body)}
+  @media (max-width:560px){.nav .links .hide-sm{display:none}}
+  .hero{padding:48px 0 8px}
+  .hero h1{font-size:clamp(28px,4.5vw,40px);margin-bottom:12px}
+  .hero p{color:var(--muted)}
+  .toc{display:flex;flex-wrap:wrap;gap:8px 16px;margin:20px 0 8px;font-size:15px}
+  section{padding:32px 0 8px}
+  .kicker{color:var(--teal);font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin-bottom:8px}
+  h2{font-size:26px;margin-bottom:14px}
+  .card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px 22px;margin-bottom:14px}
+  .card h3{font-size:18px;margin-bottom:8px}
+  .card p{margin:6px 0}
+  ol,ul{padding-left:22px;margin:8px 0}
+  li{margin:5px 0}
+  b{color:var(--heading)}
+  code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:14px;background:var(--bg);border:1px solid var(--border);border-radius:6px;padding:1px 6px;word-break:break-word}
+  pre{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:14px;background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:12px 14px;margin:8px 0;white-space:pre-wrap;word-break:break-all}
+  .note{color:var(--muted);font-size:15px}
+  footer{border-top:1px solid var(--border);margin-top:40px;padding:32px 0 48px;font-size:14px;color:var(--muted)}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="/ops/" style="text-decoration:none">Slick<span class="tick">Fast</span> <small>Ops</small></a>
+    <nav class="links">
+      <a href="#alerts">Alerts</a>
+      <a href="#boards">Boards</a>
+      <a href="#everyday" class="hide-sm">Everyday</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="hero">
+    <h1>SlickFast Ops help</h1>
+    <p>How to add and change alerts, put boards on a phone or a TV, share and schedule them, and keep SlickFast up to date.
+      Two places do everything: <b>your own Grafana</b> (the address your team uses, not grafana.com) and <b>your setup page</b>
+      (the private link from your install, on your own server).</p>
+    <div class="toc">
+      <a href="#alerts-have">Your existing alerts</a><a href="#alerts-new">A new alert</a><a href="#alerts-change">Change or mute one</a>
+      <a href="#alerts-packs">Ready-made rules</a><a href="#alerts-where">Where alerts go</a>
+      <a href="#boards-yours">Your Grafana dashboards</a><a href="#boards-ready">Ready-made boards</a><a href="#boards-share">Share and TV</a>
+      <a href="#boards-schedule">On a schedule</a><a href="#boards-change">Change or remove</a><a href="#everyday">Update, check, remove</a>
+    </div>
+  </div>
+
+  <section id="alerts">
+    <div class="kicker">Alerts</div>
+    <h2>Alerts</h2>
+
+    <div class="card" id="alerts-have">
+      <h3>Your existing alerts</h3>
+      <p>Nothing to do. Once your Grafana sends its alerts through SlickFast (done at install), every alert you already have
+        arrives as a card: the value, the threshold and the graph of what fired, with <b>Open board</b> and <b>Silence</b> links.</p>
+    </div>
+
+    <div class="card" id="alerts-new">
+      <h3>Add a new alert</h3>
+      <p>In your Grafana:</p>
+      <ol>
+        <li><b>Alerting → Alert rules → + New alert rule</b>.</li>
+        <li><b>Name</b> it plainly. It becomes the card's title, e.g. "Checkout errors high".</li>
+        <li><b>Query:</b> pick the data source and the metric, the same way you build a dashboard panel.</li>
+        <li><b>Condition:</b> e.g. "is above 80". That number becomes the grey line on the card's graph.</li>
+        <li><b>Folder</b> and <b>evaluation group</b> (e.g. "Ops", every 1 minute). <b>Pending period:</b> how long it must stay bad
+          before alerting (e.g. 5 minutes, so short blips don't page you).</li>
+        <li>Optional, for a nicer card: a <b>summary</b> (one sentence), and annotations <code>unit</code> = <code>%</code> (or
+          <code>ms</code>, …) and <code>slickfast_board</code> = a board's name, which adds an <b>Open board</b> link.</li>
+        <li><b>Save.</b> It goes through SlickFast to your Slack and email by itself.</li>
+      </ol>
+    </div>
+
+    <div class="card" id="alerts-change">
+      <h3>Change an alert, or mute it for a while</h3>
+      <ul>
+        <li><b>Change it</b> (threshold, pending period, name): edit its rule in your Grafana, <b>Alerting → Alert rules</b>.</li>
+        <li><b>Mute it for a while:</b> the <b>Silence</b> link in its message, then pick how long.</li>
+      </ul>
+    </div>
+
+    <div class="card" id="alerts-packs">
+      <h3>Ready-made alert rules</h3>
+      <p>Setup page → box 5 → tick only what you run. Each pack says what it watches and what it needs:</p>
+      <ul>
+        <li><b>Servers</b>: server down, CPU busy, memory or disk almost full, disk fills within a day, overloaded. Needs node exporter.</li>
+        <li><b>Websites</b>: site down, slow, certificate expiring. Needs the blackbox exporter.</li>
+        <li><b>Postgres</b>: database down, connections nearly full, deadlocks, cache misses. Needs the postgres exporter.</li>
+        <li><b>Redis</b>: Redis down, evicting keys, refusing connections. Needs the redis exporter.</li>
+        <li><b>Apps</b>: errors rising, slow responses. Needs your app's request metrics.</li>
+      </ul>
+      <p><b>Make my alert rules → Download</b>, then your Grafana admin puts the file in Grafana's <code>provisioning/alerting/</code>
+        folder and restarts Grafana.</p>
+    </div>
+
+    <div class="card" id="alerts-where">
+      <h3>Change where alerts go</h3>
+      <ul>
+        <li><b>Another Slack channel or inbox:</b> setup page → box 2.</li>
+        <li><b>Keep your old destination too</b> (PagerDuty, an on-call email): in your Grafana, add SlickFast as an extra
+          integration on the contact point you already use (setup page, box 3, part c). Every alert then goes to both.</li>
+        <li><b>Only some alerts through SlickFast:</b> a child notification policy that matches a label (e.g.
+          <code>severity = critical</code>), contact point SlickFast, with <b>Continue matching</b> on.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="boards">
+    <div class="kicker">Boards</div>
+    <h2>Boards</h2>
+
+    <div class="card" id="boards-yours">
+      <h3>Put your Grafana dashboards on a phone or a TV</h3>
+      <ul>
+        <li><b>See everything first:</b> setup page → box 4 → <b>Show everything</b>. Every dashboard you have, drawn as a
+          SlickFast board. Press <b>Go live</b> on the ones you want.</li>
+        <li><b>Or one at a time:</b> box 4 → <b>Load</b> → pick a dashboard → <b>Preview</b> → <b>Go live</b>.</li>
+      </ul>
+      <p>Each board gets its own link and updates by itself; the top line says how often. Nothing changes in your Grafana.</p>
+    </div>
+
+    <div class="card" id="boards-ready">
+      <h3>Ready-made boards</h3>
+      <p>Box 4 shows each template with a picture. <b>✓ Ready</b> means your Grafana already has what it reads;
+        <b>Needs: …</b> says what's missing (e.g. the postgres exporter). Pick a Ready one → <b>Use</b> → <b>Preview</b> → <b>Go live</b>.
+        Want a board of your own design? Email us. Custom boards are part of the service.</p>
+    </div>
+
+    <div class="card" id="boards-share">
+      <h3>Share a board, or put it on a TV</h3>
+      <ul>
+        <li><b>Share the whole link</b>, including the <code>?k=…</code> part. That key is what keeps the board private.</li>
+        <li><b>Phone / Screen</b> buttons at the top switch shape. For a wall TV, open the link in its browser and press
+          <b>Screen</b>. The page reloads itself, so the TV can be left alone.</li>
+        <li><b>Tap any tile</b> to see it big, over 1 h, 6 h, 24 h or 7 days.</li>
+        <li>The link works inside your network. Boards that open anywhere (outside your network) use your SlickFast key;
+          see <code>SECURITY.md</code> for exactly what that sends.</li>
+      </ul>
+    </div>
+
+    <div class="card" id="boards-schedule">
+      <h3>Send a board on a schedule</h3>
+      <p>Setup page → box 6 → pick a board (or the weekly report), the time and days, and who gets it, e.g. a client's
+        inbox → <b>Save</b>. <b>Send now</b> to check it.</p>
+    </div>
+
+    <div class="card" id="boards-change">
+      <h3>Rename, change or remove a board</h3>
+      <p>Setup page → box 4 → <b>Your boards</b>: change its title, phone or screen, how often it updates (every 1, 2, 5 or
+        15 minutes, or every hour), or <b>Remove</b> it (its link stops working).</p>
+    </div>
+  </section>
+
+  <section id="everyday">
+    <div class="kicker">Everyday</div>
+    <h2>Update, check, remove</h2>
+    <div class="card">
+      <h3>Update SlickFast</h3>
+      <p>Download the new files from your Polar page and copy them into the same <code>slickfast</code> folder on your server,
+        the same way as at install. Then, on the server as the Docker user, in that folder:</p>
+      <pre>bash install.sh</pre>
+      <p>Your settings, boards and history are kept, and there's nothing to redo in Grafana.</p>
+    </div>
+    <div class="card">
+      <h3>Check it's working</h3>
+      <p>In your Grafana: <b>Alerting → Contact points → SlickFast → Test</b>. A test card should arrive in your Slack and email
+        within seconds. Nothing? Email <a href="mailto:hello@slickfast.com">hello@slickfast.com</a>.</p>
+    </div>
+    <div class="card">
+      <h3>Remove it completely</h3>
+      <p><code>SECURITY.md</code> → "Remove it completely": three commands on the server, then delete the <code>slickfast</code>
+        service account and the SlickFast contact point in Grafana.</p>
+    </div>
+    <p class="note">Questions: <a href="mailto:hello@slickfast.com">hello@slickfast.com</a> · Security: <a href="mailto:security@slickfast.com">security@slickfast.com</a></p>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><a href="/ops/">SlickFast Ops</a> · <a href="/terms.html">Terms</a> · <a href="/privacy.html">Privacy</a></p>
+    <p>© 2026 SlickWorks LLC. SlickFast Ops works with Grafana. It is not made by, or affiliated with, Grafana Labs.</p>
+  </div>
+</footer>
+</body>
+</html>
